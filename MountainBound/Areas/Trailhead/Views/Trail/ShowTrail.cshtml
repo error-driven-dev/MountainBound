@@ -1,0 +1,25 @@
+﻿@model Trail
+
+<h2>@Model.Name</h2> 
+
+<small>
+    @if(Model.Stars == 0) { <span>(No reviews yet!)</span>}
+    else
+    {
+        for (int i = 0; i < Math.Round((decimal)Model.Stars); i++)
+         {
+             <span>&#x2b50</span>
+         }
+    } (@Model.Stars out of 5 stars)
+</small> 
+<p>@Model.Location</p>
+<p>@Model.Summary</p>
+<p>Length: @Model.Length</p>
+<p>Starting Elevation: @Model.Low</p>
+<p>Elevation Gain: @Model.Ascent</p>
+<p>Difficulty: @Model.Difficulty</p>
+
+<img src="@Model.ImgSmallMed" />
+
+
+

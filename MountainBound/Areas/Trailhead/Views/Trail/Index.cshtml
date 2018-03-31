@@ -1,0 +1,29 @@
+﻿@using MountainBound.Areas.Trailhead.Models
+@using Newtonsoft.Json.Linq
+
+@model List<Trail>
+
+<h2>Trails around @ViewBag.NationalPark</h2>
+<h5>Click on the any of the trails below for more information</h5>
+@foreach (var a in Model)
+
+{ 
+<div class="row">
+    <div class="col-2; inline-block">
+        <img src="@a.ImgSqSmall"  /><h4><a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id">@a.Name  </a>  <small>  @for(int i = 0; i<Math.Round((decimal)a.Stars); i++){
+                                                                                                                                    <span>&#x2b50</span>
+                                                                                                                                }</small> </h4>        
+            
+       
+    </div>
+    <div class="col-10">
+        <h5>@a.Location </h5>
+        <p>Difficulty: @a.Difficulty   Length: @a.Length</p>
+
+    </div>
+</div>
+    <hr />
+}
+
+
+

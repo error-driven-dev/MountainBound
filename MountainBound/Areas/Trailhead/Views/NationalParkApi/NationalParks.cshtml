@@ -1,0 +1,12 @@
+﻿@model List<Newtonsoft.Json.Linq.JToken>
+    @Model
+<h2>Welcome to Trailhead!</h2>
+<h3>Featuring top hiking trails from the National Parks of the United Sates</h3>
+
+<h5>Select a park below to see trails within a 200 mile radius of the park.</h5>
+@foreach (var park in Model)
+{
+    <a asp-action="Index" asp-controller="Trail" asp-route-name="@park.FullName" asp-route-lat="@park.Lat" asp-route-lon="@park.Lon"><h3>@park.FullName</h3></a>
+    <p>@park.City, @park.State</p>
+    <hr />
+}
