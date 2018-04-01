@@ -30,6 +30,13 @@ namespace MountainBound.Areas.TradingPost.Controllers
             });
 
         }
+
+        //admin only
+        public IActionResult SeedProducts()
+        {
+            _repository.SeedDB();
+            return RedirectToAction("ProductDirectory");
+        }
         
     }
 

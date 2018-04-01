@@ -1,0 +1,13 @@
+﻿@model List<Topic>
+<h3>Click on any of the Topics below to join the discussion...</h3>
+@if (Model == null)
+{
+    <h6>No Topics created yet</h6>
+}
+else
+{
+    foreach (var topic in Model)
+     {
+         <p><a asp-action="GetMessages" asp-route-id="@topic.TopicId">@topic.Heading</a></p>
+     }
+}

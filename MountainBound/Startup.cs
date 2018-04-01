@@ -8,8 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MountainBound.Areas.Campfire.Models;
 using MountainBound.Areas.Trailhead.Models;
 using MountainBound.Models;
+using MountainBound.Areas.TradingPost.Models;
+using Message = Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging.Message;
 
 namespace MountainBound
 {
@@ -21,15 +24,17 @@ namespace MountainBound
         {
             _config = config;
         }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ITrailRepository, TrailMemoryRepository>();
-            services.AddTransient<INationalParkApiRepository, NationalParkRepository>();
             services.AddDbContext<AppDbContext>(opts =>
                 opts.UseSqlServer(_config["ConnectionStrings:DefaultConnection"]));
+            services.AddSingleton<ITrailRepository, TrailMemoryRepository>();
+            services.AddTransient<INationalParkApiRepository, NationalParkRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<MessageRepository>();
             services.AddSession();
             services.AddMemoryCache();
             services.AddLogging();
@@ -51,13 +56,15 @@ namespace MountainBound
             app.UseSession();
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name:"area", template:"{area:exists}/{controller=Directory}/{action=NationalParks}/{id?}");
+                routes.MapRoute(name:"area", template:"{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 
                 routes.MapRoute(name: "default", template:"{controller=Home}/{action=Index}/{id?}");
 
 
             });
+            
         }
+        
     }
 }

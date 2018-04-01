@@ -1,0 +1,25 @@
+﻿@model Topic
+
+@Model.Heading
+@if (Model == null)
+{
+    <h6>No Messages created yet for this topic</h6>
+}
+else
+{
+    foreach (var msg in Model.Messages)
+     {
+         <div>
+             <p>@msg.Username @msg.CreatedAt.ToString("g")</p>
+             <p>@msg.Text</p>
+
+             @foreach (var reply in msg.Replies)
+             {
+                 <p>@reply.Username @reply.CreatedAt.ToString("g")</p>
+                 <p>@reply.Text</p>
+             }
+
+             <a asp-action="CreateMessage">Post a Message</a>
+         </div>
+     }
+}

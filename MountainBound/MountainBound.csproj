@@ -5,10 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Campfire\Controllers\" />
+    <Content Remove="Areas\Campfire\Views\Message\CreateTopic.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Campfire\Views\Message\CreateTopic.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Campfire\Data\" />
-    <Folder Include="Areas\Campfire\Models\" />
-    <Folder Include="Areas\Campfire\Views\" />
     <Folder Include="Areas\TradingPost\Data\" />
     <Folder Include="Areas\Trailhead\Data\" />
     <Folder Include="wwwroot\" />
@@ -18,6 +23,10 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Campfire\Views\Message\CreateTopic.cshtml" />
   </ItemGroup>
 
 </Project>

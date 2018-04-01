@@ -1,0 +1,19 @@
+﻿@model Topic
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <form asp-action="CreateTopic" method="post">
+        <label asp-for="Heading"></label>
+        <input asp-for="Heading" />
+        <input type="submit" value="New Topic"/>
+    </form>
+
+</div>
+</body>
+</html>
