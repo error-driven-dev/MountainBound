@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Campfire\Data\" />
     <Folder Include="Areas\TradingPost\Data\" />
     <Folder Include="Areas\Trailhead\Data\" />

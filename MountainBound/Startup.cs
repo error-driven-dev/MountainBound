@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MountainBound.Areas.Admin.Models;
 using MountainBound.Areas.Campfire.Models;
 using MountainBound.Areas.Trailhead.Models;
 using MountainBound.Models;
@@ -31,14 +33,19 @@ namespace MountainBound
         {
             services.AddDbContext<AppDbContext>(opts =>
                 opts.UseSqlServer(_config["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<AppIdentityDbContext>(opts =>
+                opts.UseSqlServer(_config["IdentityConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
             services.AddSingleton<ITrailRepository, TrailMemoryRepository>();
             services.AddTransient<INationalParkApiRepository, NationalParkRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<MessageRepository>();
-            services.AddSession();
-            services.AddMemoryCache();
+
             services.AddLogging();
             services.AddMvc();
+            services.AddSession();
+            services.AddMemoryCache();
 
         }
 
@@ -54,6 +61,7 @@ namespace MountainBound
             app.UseStaticFiles();
             app.UseStatusCodePages();
             app.UseSession();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name:"area", template:"{area:exists}/{controller=Home}/{action=Index}/{id?}");
