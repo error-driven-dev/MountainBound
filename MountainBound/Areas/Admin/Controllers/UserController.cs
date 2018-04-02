@@ -52,7 +52,7 @@ namespace MountainBound.Areas.Admin.Controllers
             
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             var user = await userManager.FindByIdAsync(id);
             if (user != null)

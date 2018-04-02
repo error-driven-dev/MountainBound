@@ -45,20 +45,48 @@ namespace MountainBound.Areas.Campfire.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult CreateMessage() => View();
-        [HttpPost]
-        public IActionResult CreateMessage(Message msg)
+        public IActionResult CreateMessage(int id, string heading)
         {
-            _repository.SaveMessage(msg);
+            var msg = new MessageModel()
+            {
+                TopicId = id,
+                TopicHeading = heading
+            };
+            return View(msg);
+        }
+        [HttpPost]
+        public IActionResult CreateMessage(MessageModel msg)
+        {
+            var newMsg = new Message()
+            {
+                Heading = msg.Heading,
+                TopicId = msg.TopicId,
+                Text = msg.Text,
+                Username = msg.Username
+            };
+            _repository.SaveMessage(newMsg);
             return RedirectToAction("Index");
         }
 
-        public IActionResult CreateReply() => View();
+        public IActionResult CreateReply(int msgId)
+        {
+            var reply = new ReplyModel()
+            {
+                MessageId = msgId
+            };
+            return View(reply);
+        }
 
         [HttpPost]
-        public IActionResult CreateReply(Reply reply)
+        public IActionResult CreateReply(ReplyModel reply)
         {
-            _repository.SaveReply(reply);
+            var newReply = new Reply()
+            {
+                MessageId = reply.MessageId,
+                Text = reply.Text,
+                Username = reply.Username
+            };
+            _repository.SaveReply(newReply);
             return RedirectToAction("Index");
         }
     }

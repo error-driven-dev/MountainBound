@@ -1,8 +1,6 @@
-﻿@model Message
+﻿@model MessageModel
 
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
@@ -13,11 +11,11 @@
 </head>
 <body>
 
-<h4>Message</h4>
+<h4>Post a new message under @Model.TopicHeading </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateMessage">
+        <form asp-action="CreateMessage" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Heading" class="control-label"></label>
@@ -29,25 +27,17 @@
                 <input asp-for="Text" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TopicId" class="control-label"></label>
-                <select asp-for="TopicId" class ="form-control" asp-items="ViewBag.TopicId"></select>
-            </div>
+            
+               
+                <input type="hidden" class="form-control" asp-action="CreateMessage" name="TopicId" value="@Model.TopicId"/>
+                <input type="hidden" class="form-control" asp-action="CreateMessage" name="TopicHeading" value="@Model.TopicHeading"/>
+            
             <div class="form-group">
                 <label asp-for="Username" class="control-label"></label>
                 <input asp-for="Username" class="form-control" />
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedAt" class="control-label"></label>
-                <input asp-for="UpdatedAt" class="form-control" />
-                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -56,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Dashboard</a>
 </div>
 
 </body>
