@@ -13,16 +13,16 @@ namespace MountainBound.Areas.Admin.Controllers
     [Area("Admin")]
     public class UserController : Controller
     {
-        private UserManager<User> userManager;
+        private UserManager<User> _userManager;
 
         public UserController(UserManager<User> userManager)
         {
-            this.userManager = userManager;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
         {
-            return View(userManager.Users);
+            return View(_userManager.Users);
         }
 
         public IActionResult Create() => View();
@@ -37,7 +37,7 @@ namespace MountainBound.Areas.Admin.Controllers
                     UserName = newUser.Name,
                     Email = newUser.Email,
                 };
-                var result = await userManager.CreateAsync(user, newUser.Password);
+                var result = await _userManager.CreateAsync(user, newUser.Password);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
@@ -49,15 +49,14 @@ namespace MountainBound.Areas.Admin.Controllers
                     } }
             }
                 return View(newUser);
-            
         }
 
         public async Task<IActionResult> Delete(string id)
         {
-            var user = await userManager.FindByIdAsync(id);
+            var user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
-                var result = await userManager.DeleteAsync(user);
+                var result = await _userManager.DeleteAsync(user);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
@@ -74,7 +73,7 @@ namespace MountainBound.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "User Not Found");
             }
-            return View("Index", userManager.Users);
+            return View("Index", _userManager.Users);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MountainBound.Areas.Campfire.Models;
 
@@ -21,7 +22,6 @@ namespace MountainBound.Areas.Campfire.Controllers
 
         public IActionResult Index()
         {
-            
             return View(_repository.GetTopics);
         }
 
@@ -45,6 +45,7 @@ namespace MountainBound.Areas.Campfire.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public IActionResult CreateMessage(int id, string heading)
         {
             var msg = new MessageModel()

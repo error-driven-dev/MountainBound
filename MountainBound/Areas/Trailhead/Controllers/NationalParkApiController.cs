@@ -75,11 +75,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
         }
     }
 }
-//
-//
-//curl -X GET "https://developer.nps.gov"+
-//"/api/v1/parks?limit=88&q=national%20park&fields=Addresses%2Cimages&sort=fullName&api_key=hBmsOHpo5rbqEnPrPYpvhhTqd3ExLRgdfUQv0DJj" -H "accept: application/json"
-//    
+
 
 
             

@@ -37,6 +37,9 @@ namespace MountainBound
                 opts.UseSqlServer(_config["IdentityConnectionStrings:DefaultConnection"]));
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>()
                 .AddDefaultTokenProviders();
+            services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Admin/Account/Login");
+            //override path for default login/authorization path
+            
             services.AddSingleton<ITrailRepository, TrailMemoryRepository>();
             services.AddTransient<INationalParkApiRepository, NationalParkRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
@@ -55,7 +58,6 @@ namespace MountainBound
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
             }
 
             app.UseStaticFiles();

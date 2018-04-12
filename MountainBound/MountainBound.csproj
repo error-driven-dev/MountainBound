@@ -17,7 +17,6 @@
     <Folder Include="Areas\Campfire\Data\" />
     <Folder Include="Areas\TradingPost\Data\" />
     <Folder Include="Areas\Trailhead\Data\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
