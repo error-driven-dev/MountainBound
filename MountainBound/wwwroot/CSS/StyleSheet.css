@@ -1,13 +1,16 @@
-﻿/*body,html {*/
-/**/
-/*    height:100vh;*/
-/*    width: 100vh;*/
-/*  */
-/*    */
-/*}*/
+﻿body{
+    background: rgb(56, 56, 54);
+    background-image: url("/images/mountainrange1.jpg") ;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    
+}
+
+
 div.c-wrap{
-    width: 85%; /* for example */
-    margin: auto;
+    width: 88%; /* for example */
+   
+    margin: 0 auto;
 }
 #parkname {
     font-size: 16px;
@@ -19,10 +22,54 @@ div.c-wrap{
 .carousel-inner > .carousel-item > img,
 .carousel-inner > .carousel-item > a > img {
     width: 100%; /* use this, or not */
-    margin: auto;
+    margin: 0 auto;
     }
 
+.nav-item a{color:whitesmoke}
+
+nav {
+    background: #5b5954;
+    height: 7vh;
+    
+}
+
+.navunderplate { background: #5b5954; /* Old browsers */
+    background: -moz-linear-gradient(left, #5b5954 2%, #c6c2b4 48%, #f7f4ea 88%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #5b5954 2%,#c6c2b4 48%,#f7f4ea 88%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #5b5954 2%,#c6c2b4 48%,#f7f4ea 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b5954', endColorstr='#f7f4ea',GradientType=1 ); /* IE6-9 */
+    height: 8vh;
+    margin-bottom: 0;
+}
+.carousel-item img {
+    box-shadow: 10px 10px 10px #000000;
+    border-bottom: black 2px solid;
+}
+.tradepost {
+    background: #000000;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.welcome {
+    position: absolute;
+    margin: auto;
+    font-size: 5rem;
+    text-shadow: 5px 5px 5px #000000;
+}
+.subnav{  background: #000000;
+    margin-top: -1em;
+}
 
 
-
+.subsites {
+    width: 70%;
+    height: 100%;
+    position: absolute; 
+    left: 15%; right: 15%; 
+    background: #f7f4ea;
+    
+    
+}
 

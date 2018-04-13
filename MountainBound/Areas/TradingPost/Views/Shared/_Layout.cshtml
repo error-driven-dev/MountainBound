@@ -1,4 +1,4 @@
-﻿
+﻿@{ Layout = "~/Views/Shared/_Master.cshtml"; }
 <!DOCTYPE html>
 
 <html>
@@ -29,10 +29,10 @@
         }
     </style>
 </head>
-<body>
-    <div>
-        <div class="navbar bg-dark">
-            <a class="navbar-brand text-white" asp-route="/">General Store</a>
+<body >
+    <div class="tradepost-container">
+        <div class="navbar subnav">
+            <a class="navbar-brand navbar-dark bg-dark text-white" asp-route="/">Trading Post</a>
         </div>
         <div class=" row m-1 p-1">
             <div class="categories col-3">@await Component.InvokeAsync("Nav")</div>

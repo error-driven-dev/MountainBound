@@ -1,14 +1,16 @@
 ﻿@model IQueryable<NationalPark>
 
-<h2 class="heading">Welcome to Trailhead!</h2>
-<h4 class="subheading">Featuring top hiking trails from the National Parks of the United Sates</h4>
+<div class="subsites">
+    <h2 class="heading">Welcome to Trailhead!</h2>
+    <h4 class="subheading">Featuring top hiking trails from the National Parks of the United Sates</h4>
 
-<h7 >Select a National Park from the list below to see trails within a 200 mile radius of the park. Parks are listed by state.</h7>
-@foreach (var park in Model)
-{
-    <div class="m-3">
-        <a id="parkname" asp-action="Index" asp-controller="Trail" asp-route-name="@park.FullName" asp-route-lat="@park.Lat" asp-route-lon="@park.Lon">@park.FullName</a>
-        <p id="citystate"> - @park.City, @park.State</p>
+    <h7>Select a National Park from the list below to see trails within a 200 mile radius of the park. Parks are listed by state.</h7>
+    @foreach (var park in Model)
+    {
+        <div class="m-3">
+            <a id="parkname" asp-action="Index" asp-controller="Trail" asp-route-name="@park.FullName" asp-route-lat="@park.Lat" asp-route-lon="@park.Lon">@park.FullName</a>
+            <p id="citystate"> - @park.City, @park.State</p>
         </div>
- 
-}
+
+    }
+</div>
