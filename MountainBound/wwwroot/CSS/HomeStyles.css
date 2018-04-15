@@ -1,0 +1,30 @@
+﻿body{
+    background: rgb(56, 56, 54);
+    background-image: url("/images/mountainrange1.jpg") ;
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    
+}
+
+
+div.c-wrap{
+    width: 88%;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.carousel-inner > .carousel-item > img,
+.carousel-inner > .carousel-item > a > img {
+    width: 100%; /* use this, or not */
+    margin:0 auto;
+    z-index: -1;
+    }
+
+.carousel-item img {
+    box-shadow: 10px -10px 10px #000000;
+    
+}
+
+
+
+

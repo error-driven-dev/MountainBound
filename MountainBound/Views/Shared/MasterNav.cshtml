@@ -1,0 +1,20 @@
+﻿   <div class="master-nav">
+    <ul class="">
+        <li class="page-link">
+            <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Trailhead" ? "alive":"dead")" asp-action="NationalParks" asp-area="Trailhead" asp-controller="Directory">Trailhead</a>
+        </li>
+        <li class="page-link">
+            <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "TradingPost" ? "alive":"dead")" asp-action="ProductDirectory" asp-area="TradingPost" asp-controller="Product">Trading Post</a>
+        </li>
+        <li class="page-link">
+            <a asp-action="Index" asp-controller="Home"></a>
+        </li>
+        <li class="page-link">
+            <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Campfire" ? "alive":"dead")" asp-action="Index" asp-area="Campfire" asp-controller="Message">Campfire</a>
+        </li>
+        <li class="page-link">
+            <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Home" ? "alive":"dead")" asp-action="#" asp-controller="Home">Contact</a>
+        </li>
+    </ul>
+    <a asp-action="/" asp-controller="Home"><img class="mb-logo" src="~/images/mbLogo.png" /></a>
+</div>

@@ -1,45 +1,15 @@
 ﻿@{ Layout = "~/Views/Shared/_Master.cshtml"; }
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link asp-href-include="/lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
-    <style>
-        .card-deck {
-            margin-top: 150px
-        }
-
-        .card-img-top {
-            height: 200px;
-            background: gray
-        }
-
-        .navvc {
-            margin-top: 50px
-        }
-
-        .categories {
-            margin-top: 100px
-        }
-
-        .mid {
-            height: 150px
-        }
-    </style>
-</head>
-<body >
-    <div class="tradepost-container">
-        <div class="navbar subnav">
+    <div class="subsites">
+        <div class=" mt-1 navbar subnav">
             <a class="navbar-brand navbar-dark bg-dark text-white" asp-route="/">Trading Post</a>
         </div>
         <div class=" row m-1 p-1">
-            <div class="categories col-3">@await Component.InvokeAsync("Nav")</div>
-            <div class="col-9">
+            <div class="categories col-2">@await Component.InvokeAsync("Nav")</div>
+            <div class="col-10">
                 @RenderBody()
             </div>
         </div>
     </div>
-</body>
-</html>
+@*</body>*@
+@*</html>*@

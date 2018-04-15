@@ -1,0 +1,80 @@
+﻿
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+
+}
+
+.master-nav {
+    font-family: 'Mogra', cursive;
+    font-family: sans-serif;
+   
+    padding: 0;
+    width: 100%;
+    background-color: #2b2a1d !important;
+    height: 4em;
+    text-align: center;
+    color: #fff6d5;
+    display: inline-block;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+ul{padding:0}
+
+li.page-link {
+    width: 19%;
+    height: 100%;
+    list-style-type: none;
+    display: inline-block;
+    background-color: #2b2a1d;
+    border: none;
+    margin-top: 1em;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+    li.page-link:hover {
+        background-color: #2b2a1d;
+        
+    }
+    li.page-link > a:hover {
+        color: #f29a15;
+        text-decoration-line: none;
+    }
+    li.page-link > a:active {
+        color: #f29a15;
+    }
+
+    li.page-link > a {
+        color: #fff6d5;
+        display: inline-block;
+        margin: auto 0 0 auto;
+    }
+        li.page-link > a.alive {
+            color: #f29a15;
+        }
+.master-footer {
+    height: 4em;
+    width: 100%;
+    background-color: #2b2a1d;
+    text-align: center;
+    color: #fff6d5;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+}
+.mb-logo {
+    overflow: visible;
+    width: 12%;
+    position: absolute;
+    top: 0;
+
+    right: 44%;
+    left: 44%;
+    z-index: 10;
+    
+}
