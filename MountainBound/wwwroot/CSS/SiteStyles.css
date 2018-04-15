@@ -1,22 +1,25 @@
 ﻿body {
-      background: url("/images/mountainrange1.jpg") no-repeat top #eee;
-      background-size: cover;
-      height: 100%;
-    background-attachment:fixed;
-              
-
-          }
+    background: url("/images/mountainrange1.jpg") no-repeat top #eee;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
 .content {
     width: 70%;
     position: relative;
-    min-height: 90vh;
+    min-height: 86vh;
     background-color: #fff;
-    margin: -2% auto 0 auto;
-    z-index: -1;
+    margin: 0 auto 0 auto;
+    z-index: 0;
     padding: 4% 2% .5em 2%;
     
 }
+button {
+    background: #f29a15;
+}
 
+/*TRAILHEAD*/
 #parkname {
     font-size: 16px;
     text-wrap: none;
@@ -27,7 +30,7 @@
 
 
 
-
+/*TRADEPOST*/
 .tradepost {
     background: #000000;
     width: 300px;
@@ -47,7 +50,7 @@
 
 
 .card-deck {
-    margin-top: 150px
+    margin-top: 75px
 }
 
 .card-img-top {
@@ -56,11 +59,11 @@
 }
 
 .navvc {
-    margin-top: 50px
+    margin-top: 40px
 }
 
 .categories {
-    margin-top: 100px
+    margin-top: 75px
 }
 
 .mid {
@@ -72,6 +75,13 @@
     text-wrap: none;
 }
 
-button {
-    background: #f29a15;
+/*CAMPFIRE*/
+
+.campfire-tbl > thead {
+    background: #2b2a1d;
+    color: #fff6d5;
+}
+
+.campfire-tbl {
+    color:#f29a15
 }

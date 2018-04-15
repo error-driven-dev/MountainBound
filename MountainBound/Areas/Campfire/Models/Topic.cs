@@ -9,6 +9,7 @@ namespace MountainBound.Areas.Campfire.Models
     {
         public int TopicId { get; set; }
         public string Heading { get; set; }
+        
         public List<Message> Messages { get; set; } = new List<Message>();
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
