@@ -38,9 +38,10 @@ namespace MountainBound.Areas.Trailhead.Controllers
 //                return View(data);
 //            }
 //        }
-        public async Task<IActionResult> Index(string lon, string lat, string name)
-        {
 
+        //takes lat and lon from national park DB table
+        public async Task<IActionResult> Trails(string lon, string lat, string name)
+        {
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://www.hikingproject.com");
@@ -78,7 +79,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
             return View(trail);
         }
 
-        //TRAIL SEARCH USING CALL TO API -- to use as fallback later on
+        //TRAIL SEARCH USING CALL TO API -- to use as fallback
         public async Task<IActionResult> GetFromApi(int id)
         {
             try
@@ -94,7 +95,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
                     var result = JObject.Parse(stringResult);
                     if ((bool) result["success"])
                     {
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Trails");
                     }
 
                     var trail = result["trails"][0].ToObject<Trail>();

@@ -4,12 +4,12 @@
     <h2 class="heading">Welcome to Trailhead!</h2>
     <h4 class="subheading">Featuring top hiking trails from the National Parks of the United Sates</h4>
 
-    <h7>Select a National Park from the list below to see trails within a 200 mile radius of the park. Parks are listed by state.</h7>
-    <div class="col2">
+    <h7 class="mb-3">Select a National Park from the list below to see trails within a 200 mile radius of the park. Parks are listed by state.</h7>
+    <div class="col2 mt-3">
         @foreach (var park in Model)
     {
         <div class="">
-            <a id="parkname" asp-action="Index" asp-controller="Trail" asp-route-name="@park.FullName" asp-route-lat="@park.Lat" asp-route-lon="@park.Lon">@park.FullName</a>
+            <a id="parkname" asp-action="Trails" asp-controller="Trail" asp-route-name="@park.FullName" asp-route-lat="@park.Lat" asp-route-lon="@park.Lon">@park.FullName</a>
             <p id="citystate"> @park.City, @park.State</p>
         </div>
 

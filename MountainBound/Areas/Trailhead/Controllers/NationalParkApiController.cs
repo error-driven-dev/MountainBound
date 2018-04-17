@@ -8,7 +8,8 @@ using MountainBound.Areas.Trailhead.Models;
 using Newtonsoft.Json.Linq;
 
 
-//used to seed database
+//used to seed database only should have
+//admin authorization
 namespace MountainBound.Areas.Trailhead.Controllers
 {
     [Area("Trailhead")]

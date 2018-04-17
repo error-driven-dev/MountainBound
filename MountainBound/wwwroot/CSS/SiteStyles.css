@@ -15,9 +15,11 @@
     padding: 4% 2% .5em 2%;
     
 }
-button {
-    background: #f29a15;
+
+a {
+    color: #ce6000 ;
 }
+
 
 /*TRAILHEAD*/
 #parkname {
@@ -27,8 +29,28 @@ button {
     text-overflow: clip;
     
 }
+.trails-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.trails-container { display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
+}
 
+.trails-item{ flex-basis: 23%;
+    border: 1px black solid;
+    margin: 1%;
+    
+    
+}
+.trails-title{ font-size: 1em; margin-bottom: 0}
+.trails-subtitle{ font-size: .9em; font-weight: bold}
+.trails-text{ font-size: .8em; margin-top: 0; margin-bottom: 0;}
 
 /*TRADEPOST*/
 .tradepost {
@@ -50,7 +72,7 @@ button {
 
 
 .card-deck {
-    margin-top: 75px
+    margin-top: 70px
 }
 
 .card-img-top {
@@ -83,5 +105,6 @@ button {
 }
 
 .campfire-tbl {
-    color:#f29a15
+    color: #ce6000
 }
+

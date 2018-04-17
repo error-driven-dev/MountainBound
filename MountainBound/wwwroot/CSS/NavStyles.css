@@ -42,12 +42,10 @@ li.page-link {
         
     }
     li.page-link > a:hover {
-        color: #f29a15;
+        color: #ce6000;
         text-decoration-line: none;
     }
-    li.page-link > a:active {
-        color: #f29a15;
-    }
+
 
     li.page-link > a {
         color: #fff6d5;
@@ -55,7 +53,7 @@ li.page-link {
         margin: auto 0 0 auto;
     }
         li.page-link > a.alive {
-            color: #f29a15;
+            color: #ce6000;
         }
 .master-footer {
     height: 4em;
