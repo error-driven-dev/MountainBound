@@ -8,46 +8,64 @@
 .content {
     width: 70%;
     position: relative;
-    min-height: 86vh;
+    min-height: 90vh;
     background-color: #fff;
     margin: 0 auto 0 auto;
     z-index: 0;
-    padding: 4% 2% .5em 2%;
+    padding: 2% 2% .5em 2%;
     
 }
 
 a {
     color: #ce6000 ;
 }
-
+button.back{ background-color: #ce6000;
+    border: none;
+    width: 6em;
+}
+button.back>a{color:#fff6d5}
+.heading-text,h2,h4{ margin-bottom: 20px !important;}
 
 /*TRAILHEAD*/
-#parkname {
-    font-size: 16px;
+/*#parkname {*/
+/*    font-size: 16px;*/
+/*    text-wrap: none;*/
+/*    max-width: 100px;*/
+/*    text-overflow: clip;*/
+/*    */
+/*}*/
+.card-body{ padding-left: 0;
+    padding-right: 0;
+}
+
+.np-cols {
+    columns: 300px 3;
+    margin-bottom:6%;
     text-wrap: none;
-    max-width: 100px;
-    text-overflow: clip;
-    
+    margin-top: 3%;
+   
+}
+
+.np-blocks {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
 }
 .trails-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.trails-container { display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    margin-bottom: 6%;
+    
 }
 
 .trails-item{ flex-basis: 23%;
     border: 1px black solid;
     margin: 1%;
     
-    
 }
+.trails-img { min-width: 250px; height: auto;}
 .trails-title{ font-size: 1em; margin-bottom: 0}
 .trails-subtitle{ font-size: .9em; font-weight: bold}
 .trails-text{ font-size: .8em; margin-top: 0; margin-bottom: 0;}
@@ -92,10 +110,7 @@ a {
     height: 150px
 }
 
-.col2{ columns: 300px  3;
-    margin-bottom: 6%;
-    text-wrap: none;
-}
+
 
 /*CAMPFIRE*/
 

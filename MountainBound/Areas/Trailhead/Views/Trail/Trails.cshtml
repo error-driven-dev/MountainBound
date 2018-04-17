@@ -2,23 +2,26 @@
 @using Newtonsoft.Json.Linq
 
 @model List<Trail>
-
+@{
+    ViewData["Title"] = "Trails";
+}
 <h2>Trails around @ViewBag.NationalPark</h2>
-<h5>Click on the any of the trails below for more information</h5>
+<h4>Click on the any of the trails below for more information</h4>
+<button class="back"><a href="javascript:history.go(-1)">BACK</a></button>
 <div class="trails-container">
-  
-        <div class="row">
-            @foreach (var a in Model)
+
+    <div class="row">
+        @foreach (var a in Model)
 
         {
-            <div class=" trails-item col-sm-12 ">
+            <div class=" trails-item col-sm-12 col-md-6">
                 <div class="trails-img">
-                    <img class="card-img-top" src="@a.ImgSmallMed"/>
+                    <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" src="@(a.ImgSmallMed ?? "~/images/imageNA.jpg")" /></a>
                 </div>
-                <div class="card-body">
+                <div class="trails-card-body card-body">
 
                     <small>
-                        @for (int i = 0; i < Math.Round((decimal) a.Stars); i++)
+                        @for (int i = 0; i < Math.Round((decimal)a.Stars); i++)
                         {
                             <span>&#x2b50</span>
                         }
@@ -27,13 +30,15 @@
                     <h7 class="trails-subtitle">@a.Location </h7>
                     <p class="trails-text">Difficulty: @a.Difficulty</p>
                     <p class="trails-text"> Length: @a.Length</p>
+
                 </div>
             </div>
 
 
-    }
-       
+        }
+
     </div>
+    <button class="back"><a href="javascript:history.go(-1)">BACK</a></button>
 </div>
 
 

@@ -1,14 +1,12 @@
 ﻿@{ Layout = "/Views/Shared/_Master.cshtml"; }
 
-    <div class="">
-        <div class=" mt-1 navbar subnav">
-            <a class="navbar-brand navbar-dark bg-dark text-white" asp-route="/">Trading Post</a>
-        </div>
+
+
         <div class=" row m-1 p-1">
             <div class="categories col-2">@await Component.InvokeAsync("Nav")</div>
             <div class="col-10">
                 @RenderBody()
             </div>
         </div>
-    </div>
+
 
