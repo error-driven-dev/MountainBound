@@ -1,73 +1,77 @@
 ﻿
 @model AddressViewModel
-
 @{
-    ViewData["Title"] = "Checkout: Ship To";
-}
-@{
-Layout = "_Layout";
+    ViewData["Title"] = "Shipping";
 }
 
 
-<h4>Contact and  Shipping Information</h4>
-
-<h6>Enter your name and and contact information.</h6>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="ShipInfo" asp-controller="Checkout">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
+@{
+    Layout = "/Views/Shared/_Master.cshtml";
+}
 
 
-            <h6>Enter your shipping address.</h6>
-            <div class="form-group">
-                <label asp-for="AddressLine1" class="control-label"></label>
-                <input asp-for="AddressLine1" class="form-control" />
-                <span asp-validation-for="AddressLine1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddressLine2" class="control-label"></label>
-                <input asp-for="AddressLine2" class="form-control" />
-                <span asp-validation-for="AddressLine2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Zipcode" class="control-label"></label>
-                <input maxlength="5" asp-for="Zipcode" class="form-control" />
-                <span asp-validation-for="Zipcode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Continue Checkout" class="btn btn-default" />
-            </div>
-        </form>
+<div class="page">
+    <h4>Shipping Information</h4>
+
+    <p class="heading-text">Please enter name and shipping information for order. Fields marked with <font color="#cc3300">*</font> are required.</p>
+
+ 
+  
+        <div class="col-md-6">
+            <form class="form-panel"asp-action="ShipInfo" asp-controller="Checkout">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font> <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+   
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="AddressLine1" class="control-label"></label>
+                    <input asp-for="AddressLine1" class="form-control" />
+                    <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AddressLine2" class="control-label"></label>
+                    <input asp-for="AddressLine2" class="form-control" />
+                    <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font> <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="State" class="control-label"></label>
+                    <select asp-for="State" class="form-control"><option value="">Choose</option><option data-country="1" value="31">Alabama</option><option data-country="1" value="24">Alaska</option><option data-country="1" value="23">Arizona</option><option data-country="1" value="22">Arkansas</option><option data-country="1" value="73">Armed Forces America</option><option data-country="1" value="74">Armed Forces Europe</option><option data-country="1" value="72">Armed Forces Pacific</option><option data-country="1" value="25">California</option><option data-country="1" value="27">Colorado</option><option data-country="1" value="47">Connecticut</option><option data-country="1" value="48">Delaware</option><option data-country="1" value="66">District of Columbia</option><option data-country="1" value="21">Florida</option><option data-country="1" value="6">Georgia</option><option data-country="1" value="30">Hawaii</option><option data-country="1" value="18">Idaho</option><option data-country="1" value="20">Illinois</option><option data-country="1" value="19">Indiana</option><option data-country="1" value="16">Iowa</option><option data-country="1" value="15">Kansas</option><option data-country="1" value="45">Kentucky</option><option data-country="1" value="44">Louisiana</option><option data-country="1" value="13">Maine</option><option data-country="1" value="39">Maryland</option><option data-country="1" value="33">Massachusetts</option><option data-country="1" value="9">Michigan</option><option data-country="1" value="37">Minnesota</option><option data-country="1" value="8">Mississippi</option><option data-country="1" value="14">Missouri</option><option data-country="1" value="10">Montana</option><option data-country="1" value="42">Nebraska</option><option data-country="1" value="40">Nevada</option><option data-country="1" value="35">New Hampshire</option><option data-country="1" value="36">New Jersey</option><option data-country="1" value="26">New Mexico</option><option data-country="1" value="11">New York</option><option data-country="1" value="1">North Carolina</option><option data-country="1" value="3">North Dakota</option><option data-country="1" value="43">Ohio</option><option data-country="1" value="38">Oklahoma</option><option data-country="1" value="28">Oregon</option><option data-country="1" value="49">Pennsylvania</option><option data-country="1" value="255">Puerto Rico</option><option data-country="1" value="12">Rhode Island</option><option data-country="1" value="2">South Carolina</option><option data-country="1" value="7">South Dakota</option><option data-country="1" value="46">Tennessee</option><option data-country="1" value="32">Texas</option><option data-country="1" value="254">U.S. Virgin Islands</option><option data-country="1" value="41">Utah</option><option data-country="1" value="34">Vermont</option><option data-country="1" value="4">Virginia</option><option data-country="1" value="29">Washington</option><option data-country="1" value="5">West Virginia</option><option data-country="1" value="50">Wisconsin</option><option data-country="1" value="17">Wyoming</option></select>
+
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Zipcode" class="control-label"></label>
+                    <input maxlength="5" asp-for="Zipcode" class="form-control" />
+                    <span asp-validation-for="Zipcode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Continue Checkout" class="btn btn-warning" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="ProductDirectory" asp-controller="Product">Back to Store</a>
-</div>
+    <div>
+        <a asp-action="ProductDirectory" asp-controller="Product">Back to Store</a>
+    </div>
+
 
 

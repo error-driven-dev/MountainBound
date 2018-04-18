@@ -2,6 +2,9 @@
 @using Microsoft.AspNetCore.Http.Extensions
 @using MountainBound.Areas.TradingPost.Models.ViewModels
 @model MountainBound.Areas.TradingPost.Models.ViewModels.ProductViewModel
+@{
+    ViewData["Title"] = "Trading Post";
+}
 @*  TABLE LIST OF PRODUCTS
 
     <table class="table table-striped table-bordered">*@
@@ -29,31 +32,33 @@
         @foreach (var p in Model.Products)
         {
             <div class="card col-4">
-                <img class="card-img-top" src="#" alt="p" />
+                <img class="card-img-top" src="#" alt="Placeholder for Product Image" />
                 <div class="card-body">
                     <div class="mid">
-                        <h5 class="trails-title">@p.Name</h5>
-                        <p class="trails-text">@p.Description</p>
+                        <h5 class="card-title">@p.Name</h5>
+                        <p class="card-text">@p.Description</p>
                     </div>
-                    <h6 class="text-danger bd">@p.Price.ToString("C")</h6>
-                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
-                        <input type="hidden" name="prodId" value="@p.ProductId" />
-                        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" />
-                        <input type="submit" class="btn btn-primary" value="Add to Cart" />
-                    </form>
+                    <div class="product-price">
+                        <h6 class="text-danger">@p.Price.ToString("C")</h6>
+                        <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                            <input type="hidden" name="prodId" value="@p.ProductId" />
+                            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" />
+                            <input type="submit" class="btn btn-primary" value="Add to Cart" />
+                        </form>
+                    </div>
                 </div>
             </div>
         }
     </div>
 </div>
 
-<div class="pages text-center m-2">
+<div class="pages text-center m-2 ">
     @for (int i = 1; i < @Model.NumPages + 1; i++)
     {
-        <a asp-action="ProductDirectory" asp-route-pagenum="@i">Page @i</a>}
+        <a class="" asp-action="ProductDirectory" asp-route-pagenum="@i">Page @i</a>}
 
 </div>
 @if (ViewContext.HttpContext.Session.Keys.Contains("Cart"))
 {
-    <a asp-action="ViewCart" asp-route-returnrul="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" asp-controller="Cart">View Shopping Cart</a>
+    <a class="btn btn-warning" asp-action="ViewCart" asp-route-returnrul="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" asp-controller="Cart">View Shopping Cart</a>
 }

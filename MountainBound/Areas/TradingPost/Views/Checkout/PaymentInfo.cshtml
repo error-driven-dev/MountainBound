@@ -1,89 +1,107 @@
 ﻿@model PaymentInfoViewModel
+@{ Layout = "/Views/Shared/_Master.cshtml"; }
+@{
+    ViewData["Title"] = "Payment";
+}
+<div class="page">
+    <h4>Payment Information</h4>
+    <p class="heading-text">Please enter payment and billing address for order. Fields marked with <font color="#cc3300">*</font> are required.</p>
 
-<h6>Enter your payment information.</h6>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="PaymentInfo" asp-controller="Checkout">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            
-            <div class="form-group">
-                <label asp-for="PaymentMethod"></label>
-                <select class="form-control" asp-for="PaymentMethod" asp-items="@new SelectList(Enum.GetNames(typeof(PaymentMethods)))">
-                    <option selected disabled>Select Payment Method</option>
 
-                </select>
-                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+        <div class="col-md-6">
+            <form asp-action="PaymentInfo" asp-controller="Checkout">
+                <div asp-validation-summary="All" class="text-danger"></div>
+              
+                <div class="form-group">
+                    <div class="cc-bar">
+                        <font color="#cc3300">*</font><label class="control-label" asp-for="PaymentMethod"></label> 
+                          <span class="float-right">
+                              <img src="https://www.biblio.com/i/bootstrap/img/cc_visa.png">
+                              <img src="https://www.biblio.com/i/bootstrap/img/cc_mc.png">
+                              <img src="https://www.biblio.com/i/bootstrap/img/cc_discover.png">
+                              <img src="https://www.biblio.com/i/bootstrap/img/cc_amex.png">
+                          </span>
+                   
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" asp-for="PaymentMethod" asp-items="@new SelectList(Enum.GetNames(typeof(PaymentMethods)))">
+                            <option selected disabled>Select Payment Method</option>
+
+                        </select>
+                        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <font color="#cc3300">*</font><label class="control-label"  asp-for="CardNumber">Card Number</label>
+                        <input class="form-control" asp-for="CardNumber" />
+                        <span asp-validation-for="CardNumber" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <font color="#cc3300">*</font><label class="control-label" asp-for="Month"></label>
+                            <input placeholder="MM" class="form-control" asp-for="Month" />
+                            <span asp-validation-for="Month" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
+                            <font color="#cc3300">*</font><label class="control-label" asp-for="Year"></label>
+                            <input placeholder="YY" class="form-control" asp-for="Year" />
+                            <span asp-validation-for="Year" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
 
                 <div class="form-group">
-                    <label asp-for="CardNumber"></label>
-                    <input class="form-control"asp-for="CardNumber" />
-                    <span asp-validation-for="CardNumber" class="text-danger"></span>
-
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.FirstName" class="control-label"></label>
+                    <input asp-for="BillingAddress.FirstName" class="form-control" />
+                    <span asp-validation-for="BillingAddress.FirstName" class="text-danger"></span>
                 </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="Month"></label>
-                        <input placeholder="MM"class="form-control" asp-for="Month" />
-                        <span asp-validation-for="Month" class="text-danger"></span>
-                    </div>
-                    <div class="col-4">
-                        <label asp-for="Year"></label>
-                        <input placeholder="YY" class="form-control" asp-for="Year" />
-                        <span asp-validation-for="Year" class="text-danger"></span>
-                    </div>
-
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.LastName" class="control-label"></label>
+                    <input asp-for="BillingAddress.LastName" class="form-control" />
+                    <span asp-validation-for="BillingAddress.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.Phone" class="control-label"></label>
+                    <input asp-for="BillingAddress.Phone" class="form-control" />
+                    <span asp-validation-for="BillingAddress.Phone" class="text-danger"></span>
                 </div>
 
-
-
-            </div>
-           
-            <div class="form-group">
-                <label asp-for="BillingAddress.FirstName" class="control-label"></label>
-                <input asp-for="BillingAddress.FirstName" class="form-control" />
-                <span asp-validation-for="BillingAddress.FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.LastName" class="control-label"></label>
-                <input asp-for="BillingAddress.LastName" class="form-control" />
-                <span asp-validation-for="BillingAddress.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.Phone" class="control-label"></label>
-                <input asp-for="BillingAddress.Phone" class="form-control" />
-                <span asp-validation-for="BillingAddress.Phone" class="text-danger"></span>
-            </div>
-
-
-            <h6>Enter your billing Address.</h6>
-            <div class="form-group">
-                <label asp-for="BillingAddress.AddressLine1" class="control-label"></label>
-                <input asp-for="BillingAddress.AddressLine1" class="form-control" />
-                <span asp-validation-for="BillingAddress.AddressLine1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.AddressLine2" class="control-label"></label>
-                <input asp-for="BillingAddress.AddressLine2" class="form-control" />
-                <span asp-validation-for="BillingAddress.AddressLine2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.City" class="control-label"></label>
-                <input asp-for="BillingAddress.City" class="form-control" />
-                <span asp-validation-for="BillingAddress.City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.State" class="control-label">State:</label>
-                <input asp-for="BillingAddress.State" class="form-control" />
-                <span asp-validation-for="BillingAddress.State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillingAddress.Zipcode" class="control-label">Zipcode:</label>
-                <input asp-for="BillingAddress.Zipcode" class="form-control" />
-                <span asp-validation-for="BillingAddress.Zipcode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Continue Checkout" class="btn btn-default" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.AddressLine1" class="control-label"></label>
+                    <input asp-for="BillingAddress.AddressLine1" class="form-control" />
+                    <span asp-validation-for="BillingAddress.AddressLine1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BillingAddress.AddressLine2" class="control-label"></label>
+                    <input asp-for="BillingAddress.AddressLine2" class="form-control" />
+                    <span asp-validation-for="BillingAddress.AddressLine2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.City" class="control-label"></label>
+                    <input asp-for="BillingAddress.City" class="form-control" />
+                    <span asp-validation-for="BillingAddress.City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font> <label asp-for="BillingAddress.State" class="control-label">State:</label>
+                    <input asp-for="BillingAddress.State" class="form-control" />
+                    <span asp-validation-for="BillingAddress.State" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <font color="#cc3300">*</font><label asp-for="BillingAddress.Zipcode" class="control-label">Zipcode:</label>
+                    <input asp-for="BillingAddress.Zipcode" class="form-control" />
+                    <span asp-validation-for="BillingAddress.Zipcode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Continue Checkout" class="btn btn-warning" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+    <div>
+        <a asp-action="ProductDirectory" asp-controller="Product">Back to Store</a>
+    </div>

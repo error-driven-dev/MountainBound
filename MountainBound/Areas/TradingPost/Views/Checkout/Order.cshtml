@@ -1,4 +1,6 @@
-﻿@model Order
+﻿@{ Layout = "/Views/Shared/_Master.cshtml"; }
+@*internal page check to see if order went through*@
+@model Order
 
 @Model.OrderId
 @foreach (var p in Model.OrderItems)

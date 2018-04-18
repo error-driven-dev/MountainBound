@@ -1,37 +1,57 @@
 ﻿@using System.Collections
 @model ReviewOrderViewModel
-    
-<h3 class="edit">Cart Contents:</h3> <a asp-action="ViewCart" asp-controller="Cart" type="button" class="edit btn btn-sm">Edit Cart Contents</a>
-<table class="table table-sm w-50">
-@if (Model.Cart.LineItems.Count < 1)
-{
-    <tr><td>Your Cart is Empty</td></tr>
+@{ Layout = "/Views/Shared/_Master.cshtml"; }
+@{
+    ViewData["Title"] = "Review";
 }
-else
-{
-foreach(var p in Model.Cart.LineItems)
- {
-     <tr>
-         <td>@p.Item.Name</td>
-         <td>@p.Quantity</td>
-         <td>@p.Item.Price.ToString("C")</td>
-     </tr>
- }
-    <tr class="font-weight-bold"><td></td><td>Subtotal</td><td>@Model.Cart.LineItems.Sum(a => a.Item.Price).ToString("C")</td></tr>
+
+<div class="page">
+    <h4>Review Your Order</h4>
+    <div class="review">
+        <div class="col-lg-6 col-md-12">
+            <div class=" mb-3">
+                <h5 class="edit-btn col-4 pl-0">Cart Contents:</h5>
+                <span class="col-2"><a asp-action="ViewCart" asp-controller="Cart">Edit Cart </a></span>
+            </div>
+
+            <table class="table table-sm">
+                @if (Model.Cart.LineItems.Count < 1)
+            {
+                <tr><td>Your Cart is Empty</td></tr>
+        }
+        else
+        {
+            foreach (var p in Model.Cart.LineItems)
+            {
+                <tr>
+                    <td>@p.Item.Name</td>
+                    <td>@p.Quantity</td>
+                    <td>@p.Item.Price.ToString("C")</td>
+                </tr>
+        }
+        <tr class="font-weight-bold"><td></td><td>Subtotal</td><td>@Model.Cart.LineItems.Sum(a => a.Item.Price).ToString("C")</td></tr>
 }
-</table>
+            </table>
+        </div>
+        </div>
 
+        <div class="review mt-5 mb-3">
+            <div class="col-lg-6 col-md-12">
+                <div class="mb-3  "> <h5 class="edit-btn col-4 pl-0">Ship To:</h5> <span class="col-2"><a asp-action="EditShipInfo">Edit Shipping</a></span></div>
+                <address>
+                    @Model.ShipInfo.FirstName @Model.ShipInfo.LastName <br />
+                    @Model.ShipInfo.AddressLine1
+                    @Model.ShipInfo.AddressLine2<br />
+                    @Model.ShipInfo.City, @Model.ShipInfo.State @Model.ShipInfo.Zipcode <br />
 
-<h3 class="edit">Ship To:</h3> <a asp-action="EditShipInfo" type="button" class=" edit btn btn-sm">Edit Shipping Info</a>
-<h6>@Model.ShipInfo.FirstName @Model.ShipInfo.LastName</h6> 
-<p>@Model.ShipInfo.AddressLine1</p>
-<p>@Model.ShipInfo.AddressLine2</p>
-<p>@Model.ShipInfo.City, @Model.ShipInfo.State @Model.ShipInfo.Zipcode</p>
+                    @Model.ShipInfo.Phone.Value.ToString("###-###-####")<br />
+                </address>
+            </div>
+        </div>
 
-<p>@Model.ShipInfo.Phone.Value.ToString("###-###-####")</p>
-
-<form asp-action="SubmitOrder" asp-controller="Checkout" method="post">
-    <input type="submit" class="btn btn-primary" value="Complete Order"/>
-</form>
+        <form asp-action="SubmitOrder" asp-controller="Checkout" method="post">
+            <input type="submit" class="btn btn-warning" value="Complete Order" />
+        </form>
+    </div>
 
 

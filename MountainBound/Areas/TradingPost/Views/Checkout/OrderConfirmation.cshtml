@@ -1,1 +1,10 @@
-﻿<h1>Thank you for your order!</h1>
+﻿@{ Layout = "/Views/Shared/_Master.cshtml"; }
+
+@if (Model == null)
+{
+    <h2 class="confirmation">There are no items in your cart.</h2>
+    <a asp-action="directory" asp-controller="product" asp-area="tradingpost">Go To Store</a>
+}
+
+<h2 class="confirmation">Thank you for your order!</h2>
+

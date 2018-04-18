@@ -28,15 +28,15 @@
                     <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
                     <input type="submit" class="btn" value=" - "/>
                 </form></span></td>
-            <td>@(p.Item.Price*p.Quantity)</td>
+            <td>@((p.Item.Price*p.Quantity).Value.ToString("C"))</td>
         </tr>
     }
 
     <tr class="subtotal bg-light" >
         <td >
-            </td><td><h3 class="text-right">Subtotal:</h3></td><td><h3>@Model.Cart.LineItems.Sum(p => p.Quantity)</h3></td>
+            </td><td><h4 class="text-right">Subtotal:</h4></td><td><h4>@Model.Cart.LineItems.Sum(p => p.Quantity)</h4></td>
         <td>
-            <h3>@Model.Cart.LineItems.Sum(p => (p.Item.Price*p.Quantity)).Value.ToString("C") </h3></td>
+            <h4>@Model.Cart.LineItems.Sum(p => (p.Item.Price*p.Quantity)).Value.ToString("C") </h4></td>
     </tr>
     </table> 
 

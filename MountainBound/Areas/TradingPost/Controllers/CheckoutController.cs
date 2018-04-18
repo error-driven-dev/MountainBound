@@ -110,9 +110,15 @@ namespace MountainBound.Areas.TradingPost.Controllers
             _context.SaveChanges();
             var orderId = newOrder.OrderId;
             HttpContext.Session.Clear();
-            return View("OrderConfirmation");
+            return RedirectToAction("OrderConfirmation");
         }
-        //check if orders saved to DB
+
+        public IActionResult OrderConfirmation()
+        {
+            return View();
+        }
+
+        //check if orders saved to DB -- not public
         public IActionResult GetOrder()
         {
            var order= _context.Orders.Include(p => p.OrderItems).FirstOrDefault();

@@ -3,7 +3,7 @@
     background-size: cover;
     height: 100%;
     background-attachment: fixed;
-   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .content {
     width: 70%;
@@ -26,13 +26,6 @@ button.back{ background-color: #ce6000;
 }
 button.back>a{color:#fff6d5}
 .heading-text,h2,h4{ margin-bottom: 20px !important;}
-
-input.btn {
-    text-transform: uppercase;
-    background-color: #ce6000;
-    color: #fff6d5;
-    border: none;
-}
 
 /*TRAILHEAD*/
 /*#parkname {*/
@@ -116,16 +109,6 @@ input.btn {
 
 .control-label{ text-transform: uppercase; font-size: .8em; font-weight: bold}
 
-.cc-bar{ display: inline; vertical-align: top;}
-
-.edit-btn{ display: inline;}
-
-address{ margin: 0; padding: 0; text-transform: uppercase}
-.review {
-    border: 1px solid #e2e2e2;
-    padding: 2%
-}
-.confirmation{ margin: 10% auto;}
 /*CAMPFIRE*/
 
 .campfire-tbl > thead {
