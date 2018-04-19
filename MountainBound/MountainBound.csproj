@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Campfire\Data\" />
+    <Folder Include="Areas\Campfire\Views\Shared\" />
     <Folder Include="Areas\TradingPost\Data\" />
   </ItemGroup>
 

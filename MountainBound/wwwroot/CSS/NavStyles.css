@@ -8,8 +8,8 @@ body {
 }
 
 .master-nav {
-    font-family: 'Mogra', cursive;
-    font-family: sans-serif;
+ 
+   
    
     padding: 0;
     width: 100%;
@@ -20,6 +20,7 @@ body {
     display: inline-block;
     font-size: 1em;
     text-transform: uppercase;
+    letter-spacing: 1px;
 
     }
 ul{padding:0}
@@ -31,7 +32,7 @@ li.page-link {
     display: inline-block;
     background-color: #2b2a1d;
     border: none;
-    margin-top: 1em;
+    margin-top:.5em;
     text-align: center;
     vertical-align: middle;
 
@@ -55,21 +56,37 @@ li.page-link {
         li.page-link > a.alive {
             color: #ce6000;
         }
+        li.page-link > a > p {
+            font-size: .8em;
+            text-transform: none;
+            font-style: oblique;
+            color: #d6ccad;
+            margin-bottom: 0;
+            letter-spacing: 0;
+        }
 .master-footer {
-    height: 4em;
+    height: 5em;
     width: 100%;
     background-color: #2b2a1d;
-    text-align: center;
-    color: #fff6d5;
-    display: inline-block;
+    color: #d6ccad;
+
     position: fixed;
     bottom: 0;
+    font-size: .8em;
+  
 }
+.footer-content, .credits{ width: 45%; display: inline-block; vertical-align: top;}
+div.footer-content > * {
+    margin: .5em 1%;
+}
+div.footer-content>ul>li{ display: inline;}
+
 .mb-logo {
     overflow: visible;
     width: 12%;
     position: absolute;
     top: 0;
+
 
     right: 44%;
     left: 44%;

@@ -45,7 +45,7 @@ namespace MountainBound.Areas.Campfire.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize]
+       
         public IActionResult CreateMessage(int id, string heading)
         {
             var msg = new MessageModel()
@@ -69,26 +69,29 @@ namespace MountainBound.Areas.Campfire.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult CreateReply(int msgId)
+        public IActionResult GetReplies(int id)
         {
-            var reply = new ReplyModel()
-            {
-                MessageId = msgId
-            };
-            return View(reply);
+            return View(new ReplyModel {Message= _repository.GetMessageAndReplies(id)});
         }
+
+
 
         [HttpPost]
         public IActionResult CreateReply(ReplyModel reply)
         {
-            var newReply = new Reply()
+            if (ModelState.IsValid)
             {
-                MessageId = reply.MessageId,
-                Text = reply.Text,
-                Username = reply.Username
-            };
-            _repository.SaveReply(newReply);
-            return RedirectToAction("Index");
+                var newReply = new Reply()
+                {
+                    MessageId = reply.MessageId,
+                    Text = reply.Text,
+                    Username = reply.Username
+                };
+                _repository.SaveReply(newReply);
+                return RedirectToAction("GetReplies", new {id = reply.MessageId});
+            }
+
+            return View("GetReplies", reply);
         }
     }
 }

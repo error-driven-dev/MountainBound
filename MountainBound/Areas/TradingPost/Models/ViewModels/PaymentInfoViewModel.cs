@@ -12,11 +12,11 @@ namespace MountainBound.Areas.TradingPost.Models.ViewModels
         public string CardNumber { get; set; }
 
         [Display(GroupName= "Expiration Date")]
-        [Required(ErrorMessage = "Requiredm.")]
+        [Required(ErrorMessage = "Required")]
         [Range(1,13, ErrorMessage = "Must be 1-12")]
         public int? Month { get; set; }
 
-        [Required(ErrorMessage = "Requiredy.")]
+        [Required(ErrorMessage = "Required")]
         public int? Year { get; set; }
 
         [Display(GroupName = "Billing Name and Address")]

@@ -26,7 +26,8 @@ namespace MountainBound.Areas.Campfire.Models
 
     public class ReplyModel
     {
-        [Required]
+        public Message Message { get; set; }
+
         public int MessageId { get; set; }
 
         [Required]

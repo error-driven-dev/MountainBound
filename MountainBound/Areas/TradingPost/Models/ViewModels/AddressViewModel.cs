@@ -25,24 +25,24 @@ namespace MountainBound.Areas.TradingPost.Models.ViewModels
         
 
 
-        [Required (ErrorMessage = "Required1.")]
+        [Required (ErrorMessage = "Required")]
         [Display(Name="Address Line 1:")]
         public string AddressLine1 { get; set; }
 
         [Display(Name="Address Line 2 (Apt, Suite, Floor, Unit):")]
         public string AddressLine2 { get; set; }
 
-        [Required(ErrorMessage = "Requiredc.")]
+        [Required(ErrorMessage = "Required")]
         [Display(Name = "City:")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "Requireds.")]
+        [Required(ErrorMessage = "Required")]
         [Display(Name = "State:")]
         public string State { get; set; }
         
         [Display(Name = "5-digit Zipcode:")]
         [RegularExpression(@"^\d{5}([\-]?\d{4})?$", ErrorMessage = "Invalid zipcode")]
-        [Required(ErrorMessage = "Requiredz.")]
+        [Required(ErrorMessage = "Required")]
         public int? Zipcode { get; set; }
     }
 }

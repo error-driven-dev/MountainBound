@@ -22,11 +22,16 @@ namespace MountainBound.Areas.Campfire.Models
 
         public Topic GetTopicMessages(int topicId)
         {
-            var topicMessages = _context.Topics.Include(m => m.Messages).ThenInclude(r => r.Replies)
+            var topicMessages = _context.Topics.Include(m => m.Messages)
                 .FirstOrDefault(t => t.TopicId == topicId);
             return topicMessages;
         }
 
+        public Message GetMessageAndReplies(int msgId)
+        {
+            var msgAndReplies = _context.Messages.Include(r => r.Replies).FirstOrDefault(m => m.MessageId == msgId);
+            return msgAndReplies;
+        }
         public void SaveMessage( Message msg)
         {
             _context.Messages.Add(msg);

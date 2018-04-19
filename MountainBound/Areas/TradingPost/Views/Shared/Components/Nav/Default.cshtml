@@ -4,7 +4,7 @@
 <Hr />
 @foreach (string category in Model)
 {
-    <p> <a class="navvc btn btn-block @(ViewContext.RouteData.Values["category"]?.ToString() == category ? "btn-primary":"btn-outline-primary")" asp-action="ProductDirectory" asp-controller="Product" asp-route-category="@category" asp-route-pagenum="1">
+    <p><a class="btn btn-block @(ViewContext.RouteData.Values["category"]?.ToString() == category ? "tp-btn":"tp-btn-outline")" asp-action="ProductDirectory" asp-controller="Product" asp-route-category="@category" asp-route-pagenum="1">
         @category</a></p>
 
 }

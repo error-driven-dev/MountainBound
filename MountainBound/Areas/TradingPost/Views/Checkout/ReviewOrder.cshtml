@@ -5,7 +5,7 @@
     ViewData["Title"] = "Review";
 }
 
-<div class="page">
+<div class="page col-6">
     <h4>Review Your Order</h4>
     <div class="review">
         <div class="col-lg-6 col-md-12">
@@ -50,7 +50,7 @@
         </div>
 
         <form asp-action="SubmitOrder" asp-controller="Checkout" method="post">
-            <input type="submit" class="btn btn-warning" value="Complete Order" />
+            <input type="submit" class="btn tp-btn btn-block" value="Complete Order" />
         </form>
     </div>
 

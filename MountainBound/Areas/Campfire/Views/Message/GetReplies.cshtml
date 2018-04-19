@@ -1,0 +1,77 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model ReplyModel
+
+@{
+    ViewData["Title"] = "Campfire Post";
+}
+
+
+
+
+<div class="table-responsive">
+    <table class="replies-tbl campfire-tbl table table-bordered table-md">
+        <thead>
+        <tr ><th>@Model.Message.Heading</th><th>Author</th><th>Date</th></tr>
+        </thead>
+
+        <tr class="main-post">
+            <td>
+            <p>@Model.Message.Text</p>
+
+            <td>@Model.Message.Username</td>
+            <td> @Model.Message.CreatedAt.ToString("g")</td>
+        </tr >
+        @if (Model.Message.Replies.Count == 0)
+        {
+            <tr><td colspan="3">No Replies posted yet</td></tr>
+
+        }else {
+            foreach(var reply in Model.Message.Replies) {
+                <tr class="reply">
+                    <td><i class="fas fa-reply"></i> @reply.Text</td>
+                    <td>@reply.Username</td>
+                    <td>@reply.CreatedAt</td>
+                </tr>
+            }
+        }
+    </table>
+</div><div>
+    <button class="back mb-3"><a href="javascript:history.go(-1)">BACK</a></button>
+    <a class="ml-3"asp-action="Index"> Back to Dashboard</a>
+</div>
+<div class="reply-box w-50 mt-5 p-2">
+    <h4>Post a Reply</h4>
+
+    <div class="row">
+        <div class="col-md-9">
+            <form asp-action="CreateReply" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <input type="hidden" name="MessageId" class="form-control" value="@Model.Message.MessageId" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Text" class="control-label">Comment</label>
+                    <Textarea cols="12" rows="5"asp-for="Text" class="form-control"></Textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Reply To Post" class="btn btn-warning reply" />
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+<div>
+    
+</div>

@@ -27,21 +27,14 @@ button.back{ background-color: #ce6000;
 button.back>a{color:#fff6d5}
 .heading-text,h2,h4{ margin-bottom: 20px !important;}
 
-input.btn {
+input.btn:not(.reply) {
     text-transform: uppercase;
     background-color: #ce6000;
     color: #fff6d5;
     border: none;
 }
 
-/*TRAILHEAD*/
-/*#parkname {*/
-/*    font-size: 16px;*/
-/*    text-wrap: none;*/
-/*    max-width: 100px;*/
-/*    text-overflow: clip;*/
-/*    */
-/*}*/
+
 .card-body{ padding-left: 0;
     padding-right: 0;
 }
@@ -92,7 +85,7 @@ input.btn {
 }
 
 .card-deck {
-    margin-top: 70px
+    margin-top: 40px;
 }
 
 .card-img-top {
@@ -125,7 +118,44 @@ address{ margin: 0; padding: 0; text-transform: uppercase}
     border: 1px solid #e2e2e2;
     padding: 2%
 }
-.confirmation{ margin: 10% auto;}
+.confirmation{ width: 50%; margin: 10% auto; text-align: center;}
+
+.btn-primary, .btn-block:hover, .tp-btn {
+    background-color: #4f879b !important;
+    color: white;
+    border: 3px;
+    border-radius: 0;
+}
+
+.btn-outline-primary, .tp-btn-outline {
+    border: #4f879b solid 2px;
+    color: #494747;
+    border-radius: 0;
+    font-size: 1rem;
+    width: 9rem;
+    font-weight: bold;
+}
+
+.circle {
+    background-color: transparent;
+    color: #494747 !important;
+    border: #e5e3e3 solid 1px !important;
+    width: 1.5rem;
+    height: 2rem;
+    text-align: center;
+    padding: auto;
+    font-weight: bold;
+
+}
+.plus {
+    border-radius: 0 50% 50% 0;
+}.minus {
+    border-radius: 50%  0 0 50%;
+}
+a.pagelinks, pages{ color: black; margin-right:1%
+    
+}
+.reply, btn {border-radius:0}
 /*CAMPFIRE*/
 
 .campfire-tbl > thead {
@@ -136,4 +166,11 @@ address{ margin: 0; padding: 0; text-transform: uppercase}
 .campfire-tbl {
     color: #ce6000
 }
-
+.main-post {
+    background-color: #f2f2f2;
+    color: #494747 !important;
+    font-weight: bold;
+}
+.reply-box {
+    border: #e5e3e3 solid 1px
+}

@@ -1,30 +1,33 @@
 ﻿@model Topic
 
 @Model.Heading
-
+@{
+    ViewData["Title"] = "Topic Posts";
+}
 
 <div class="table-responsive">
     <table class="campfire-tbl table table-striped table-bordered table-md">
         <thead>
-            <tr><th>Message Post</th><th>Author</th><th>Date</th></tr></thead>
+            <tr><th>Message Posted in @Model.Heading</th><th>Author</th><th>Date</th></tr>
+        </thead>
         @if (Model.Messages.Count == 0)
-    {
-        <tr><td>No Messages posted yet</td></tr>
+        {
+            <tr><td colspan="3">No Messages posted yet</td></tr>
 
-                    }
-                    else
-                    {
-                       foreach(var msg in Model.Messages)
-                        {
-        <tr>
-            <td>
-            
-            
-            <p>@msg.Username @msg.CreatedAt.ToString("g")</p>
-            <p>@msg.Text  <a asp-action="CreateReply" class="btn btn-sm btn-primary" asp-route-msgId="@msg.MessageId">Reply</a></p>
-        </tr>
-}
+        }
+        else
+        {
+            foreach (var msg in Model.Messages)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="GetReplies" asp-controller="Message" asp-route-id="@msg.MessageId">@msg.Heading</a>
+
+                    <td>@msg.Username</td>
+                    <td> @msg.CreatedAt.ToString("g")</td>
+                </tr>
+            }
         }
     </table>
 </div>
-<a class="btn btn-warning" asp-action="CreateMessage" asp-route-id="@Model.TopicId" asp-route-topic="@Model.Heading">Create New Thread in "@Model.Heading"</a>
+<a class="btn btn-warning" asp-action="CreateMessage" asp-route-id="@Model.TopicId" asp-route-topic="@Model.Heading">Post a New Message in "@Model.Heading"</a>
