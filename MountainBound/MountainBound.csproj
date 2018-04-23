@@ -2,10 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="Areas\Campfire\Views\Message\CreateTopic.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Remove="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Remove="Properties\PublishProfiles\MountainBound5062168160.pubxml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +24,7 @@
     <Folder Include="Areas\Campfire\Data\" />
     <Folder Include="Areas\Campfire\Views\Shared\" />
     <Folder Include="Areas\TradingPost\Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
   <ItemGroup>

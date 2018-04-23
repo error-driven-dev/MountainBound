@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/MountainBound",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:50386/",
       "sslPort": 0
@@ -16,7 +20,7 @@
       }
     },
     "MountainBound": {
-      "commandName": "Project",
+      "commandName": "Executable",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

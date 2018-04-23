@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Trail";
 }
-<h2>@Model.Name</h2>
+ <div class="inline-button"><h2>@Model.Name</h2> <div class="float-right"><button class="th back"><a href="javascript:history.go(-1)">BACK</a></button></div></div>
 <h4 class="heading-text">@Model.Location</h4>
 <p>
     @if (Model.Stars == 0)
@@ -28,5 +28,5 @@
 
 
 
-<div class="mt-2"><button class="back"><a href="javascript:history.go(-1)">BACK</a></button></div>
+
 

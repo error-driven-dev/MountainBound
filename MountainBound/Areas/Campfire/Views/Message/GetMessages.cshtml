@@ -1,14 +1,14 @@
 ﻿@model Topic
 
-@Model.Heading
+<div class="inline-button"><h4>@Model.Heading</h4> <div class="float-right"><button class="back"><a href="javascript:history.go(-1)">BACK</a></button></div></div>
 @{
     ViewData["Title"] = "Topic Posts";
 }
-
+<h6>Click on the posts below to view the full message and replies.</h6>
 <div class="table-responsive">
     <table class="campfire-tbl table table-striped table-bordered table-md">
         <thead>
-            <tr><th>Message Posted in @Model.Heading</th><th>Author</th><th>Date</th></tr>
+            <tr><th>Messages Posted in @Model.Heading</th><th>Author</th><th>Date</th></tr>
         </thead>
         @if (Model.Messages.Count == 0)
         {
@@ -21,7 +21,7 @@
             {
                 <tr>
                     <td>
-                        <a asp-action="GetReplies" asp-controller="Message" asp-route-id="@msg.MessageId">@msg.Heading</a>
+                        <a class="cf-heading" asp-action="GetReplies" asp-controller="Message" asp-route-id="@msg.MessageId">@msg.Heading</a>
 
                     <td>@msg.Username</td>
                     <td> @msg.CreatedAt.ToString("g")</td>
@@ -30,4 +30,4 @@
         }
     </table>
 </div>
-<a class="btn btn-warning" asp-action="CreateMessage" asp-route-id="@Model.TopicId" asp-route-topic="@Model.Heading">Post a New Message in "@Model.Heading"</a>
+<a class="btn btn-warning" asp-action="CreateMessage" asp-route-id="@Model.TopicId" asp-route-topic="@Model.Heading">Post a New Message</a>

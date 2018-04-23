@@ -73,6 +73,8 @@ namespace MountainBound.Migrations
 
                     b.Property<DateTime>("CreatedAt");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("Heading");
 
                     b.Property<DateTime>("UpdatedAt");

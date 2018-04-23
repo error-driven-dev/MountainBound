@@ -10,6 +10,10 @@ using Newtonsoft.Json.Linq;
 
 //used to seed database only should have
 //admin authorization
+
+//call to /Trailhead/NationalParks/index will seed DB with Nat park data; 
+//"unknown" is added to values where no lat and long data is avail; will need to remove from DB, query: delete from NationalParks where NationalParks.Lat='unknown';
+
 namespace MountainBound.Areas.Trailhead.Controllers
 {
     [Area("Trailhead")]
@@ -27,6 +31,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
         {
             using (HttpClient client = new HttpClient())
             {
+                
                 client.BaseAddress = new Uri("https://developer.nps.gov/");
                 var response =
                     await client.GetAsync(

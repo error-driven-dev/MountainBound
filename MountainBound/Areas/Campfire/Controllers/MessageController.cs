@@ -39,7 +39,8 @@ namespace MountainBound.Areas.Campfire.Controllers
         {
             var newtopic = new Topic()
             {
-                Heading = topic.Heading
+                Heading = topic.Heading,
+                Description = topic.Description
             };
             _repository.SaveTopic(newtopic);
             return RedirectToAction("Index");
@@ -51,8 +52,8 @@ namespace MountainBound.Areas.Campfire.Controllers
             var msg = new MessageModel()
             {
                 TopicId = id,
-                TopicHeading = heading
-            };
+                TopicHeading = heading,
+                };
             return View(msg);
         }
         [HttpPost]

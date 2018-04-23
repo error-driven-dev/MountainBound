@@ -1,11 +1,15 @@
 ﻿@model List<Topic>
+@{
+    ViewData["Title"] = "Campfire";
+}
 <div class="">
-    <h1>Campfire</h1>
-    <h3>Mountain Bound user</h3>
+    <h2>Campfire</h2>
+    <h4>Online Discussion Board</h4>
     <h6>Click on any of the Topics below to join the discussion...</h6>
     <div class="table-responsive">
         <table class="campfire-tbl table table-striped table-bordered table-md">
-            <thead><th>Category</th></thead>
+            <thead>
+            <th>Category</th></thead>
             @if (Model == null)
             {
                 <tr><td>No Topics created yet</td></tr>
@@ -17,8 +21,9 @@
                 {
                     <tr>
                         <td>
-                        <p><a asp-action="GetMessages" asp-route-id="@topic.TopicId">@topic.Heading</a></p>
-                        </tr>
+                        <a class="cf-heading" asp-action="GetMessages" asp-route-id="@topic.TopicId">@topic.Heading</a>
+                        <p class="topic-desc">@topic.Description</p>
+                    </tr>
                 }
             }
         </table>

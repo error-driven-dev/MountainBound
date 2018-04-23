@@ -7,38 +7,37 @@
 }
 <h2>Trails around @ViewBag.NationalPark</h2>
 <h4>Click on the any of the trails below for more information</h4>
-<button class="back"><a href="javascript:history.go(-1)">BACK</a></button>
+<button class="th back"><a href="javascript:history.go(-1)">BACK</a></button>
 <div class="trails-container">
 
-    <div class="row">
-        @foreach (var a in Model)
+<div class="row">
+    @foreach (var a in Model)
 
-        {
-            <div class=" trails-item col-sm-12 col-md-6">
-                <div class="trails-img">
-                    <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" src="@(a.ImgSmallMed ?? "~/images/imageNA.jpg")" /></a>
-                </div>
-                <div class="trails-card-body card-body">
-
-                    <small>
-                        @for (int i = 0; i < Math.Round((decimal)a.Stars); i++)
-                        {
-                            <span>&#x2b50</span>
-                        }
-                    </small>
-                    <h6 class="trails-title"><a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id">@a.Name </a></h6>
-                    <h7 class="trails-subtitle">@a.Location </h7>
-                    <p class="trails-text">Difficulty: @a.Difficulty</p>
-                    <p class="trails-text"> Length: @a.Length</p>
-
-                </div>
+    {
+        <div class=" trails-item col-sm-12 col-md-6">
+            <div class="trails-img">
+                <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" alt-text="No Photo Available" src="@(a.ImgSmallMed ?? "~/images/imageNA.jpg")" /></a>
             </div>
+            <div class="trails-card-body card-body">
+
+                <small>
+                    @for (int i = 0; i < Math.Round((decimal)a.Stars); i++)
+                    {
+                        <span>&#x2b50</span>
+                    }
+                </small>
+                <h6 class="trails-title"><a class="th"asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id">@a.Name </a></h6>
+                <h7 class="trails-subtitle">@a.Location </h7>
+                <p class="trails-text">Difficulty: @a.Difficulty</p>
+                <p class="trails-text"> Length: @a.Length</p>
+
+            </div>
+        </div>
 
 
-        }
+    }
 
-    </div>
-    <button class="back"><a href="javascript:history.go(-1)">BACK</a></button>
+</div>
 </div>
 
 

@@ -30,7 +30,7 @@
 <div class="container">
     <div class="text-right mt-5 mb-0">@if (ViewContext.HttpContext.Session.Keys.Contains("Cart"))
          {
-             <a class="btn btn-warning" asp-action="ViewCart" asp-route-returnrul="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" asp-controller="Cart"><i class="fas fa-shopping-cart"></i> View Cart</a>
+             <a class="btn btn-warning" asp-action="ViewCart" asp-route-returnrul="@ViewContext.HttpContext.Request.Path@ViewContext.HttpContext.Request.QueryString" asp-controller="Cart"><i class="fa fa-shopping-cart"></i> View Cart</a>
          }</div>
     <div class="card-deck">
         @foreach (var p in Model.Products)

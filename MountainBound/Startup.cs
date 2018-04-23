@@ -29,10 +29,11 @@ namespace MountainBound
         
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddDbContext<AppDbContext>(opts =>
-                opts.UseSqlServer(_config["ConnectionStrings:DefaultConnection"]));
+        public void ConfigureServices(IServiceCollection services) { 
+       
+                services.AddDbContext<AppDbContext>(opts =>
+                    opts.UseSqlServer(_config["A2Host:DefaultConnection"]));
+           
             services.AddDbContext<AppIdentityDbContext>(opts =>
                 opts.UseSqlServer(_config["IdentityConnectionStrings:DefaultConnection"]));
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>()

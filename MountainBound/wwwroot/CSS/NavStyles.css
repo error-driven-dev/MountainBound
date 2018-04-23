@@ -65,7 +65,7 @@ li.page-link {
             letter-spacing: 0;
         }
 .master-footer {
-    height: 5em;
+    height: 6em;
     width: 100%;
     background-color: #2b2a1d;
     color: #d6ccad;
@@ -75,12 +75,13 @@ li.page-link {
     font-size: .8em;
   
 }
-.footer-content, .credits{ width: 45%; display: inline-block; vertical-align: top;}
-div.footer-content > * {
-    margin: .5em 1%;
-}
-div.footer-content>ul>li{ display: inline;}
+.footer-center {
+    text-align: center;
 
+}
+.italic { font-style: italic; font-size: .8em; margin-left: 1%; margin-top: .5%}
+/*ul>li>a>i, li, li>a{ display: inline; text-align: center;}*/
+span.fa, span>a.fa{margin-left:1%}
 .mb-logo {
     overflow: visible;
     width: 12%;
@@ -93,3 +94,14 @@ div.footer-content>ul>li{ display: inline;}
     z-index: 10;
     
 }
+a.fa-envelope{color:#d6ccad}
+ul.contact-links > li > a, ul.contact-links > li {
+    font-size: 1.8vh;
+
+    display: inline;
+    text-align: center;
+    color: #d6ccad !important
+
+}
+ul.contact-links, .sig-line{ margin: 0;}
+.sig-line{letter-spacing: .2vw}
