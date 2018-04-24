@@ -75,5 +75,7 @@ namespace MountainBound.Areas.Admin.Controllers
             }
             return View("Index", _userManager.Users);
         }
+
+        public IActionResult ComingSoon() => View();
     }
 }

@@ -16,7 +16,13 @@
     {
         <div class=" trails-item col-sm-12 col-md-6">
             <div class="trails-img">
-                <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" alt-text="No Photo Available" src="@(a.ImgSmallMed ?? "~/images/imageNA.jpg")" /></a>
+                @if (a.ImgSmallMed != "")
+    {
+            <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" alt-text="No Photo Available" src="@(a.ImgSmallMed ?? "~/images/imageNA.jpg")" /></a>
+}
+else
+{ <a asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id"><img class="trails-img card-img-top" alt-text="No Photo Available" src="~/images/imageNA.jpg" /></a>
+}
             </div>
             <div class="trails-card-body card-body">
 

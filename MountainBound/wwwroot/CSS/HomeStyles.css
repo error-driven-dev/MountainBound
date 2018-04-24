@@ -15,8 +15,8 @@ div.c-wrap{
 
 .carousel-inner > .carousel-item > img,
 .carousel-inner > .carousel-item > a > img {
-    width: 100%; /* use this, or not */
-    margin:0 auto;
+    width: 75%; /* use this, or not */
+    margin:-1% auto;
     z-index: -1;
     }
 
@@ -25,6 +25,21 @@ div.c-wrap{
     
 }
 
+@media screen and (max-width: 600px) {
+    div.c-wrap{
+        min-width: 100%;
+      
+        z-index: -1;
+    }
 
+    .carousel-inner > .carousel-item > img,
+    .carousel-inner > .carousel-item > a > img {
+        width: 100%;
+        margin-top: 20%;
+        z-index: -1;
+        vertical-align: middle;
+    }
+
+}
 
 

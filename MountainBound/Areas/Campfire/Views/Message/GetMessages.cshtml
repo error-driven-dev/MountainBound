@@ -5,7 +5,7 @@
     ViewData["Title"] = "Topic Posts";
 }
 <h6>Click on the posts below to view the full message and replies.</h6>
-<div class="table-responsive">
+<div class="scroll">
     <table class="campfire-tbl table table-striped table-bordered table-md">
         <thead>
             <tr><th>Messages Posted in @Model.Heading</th><th>Author</th><th>Date</th></tr>
@@ -20,7 +20,7 @@
             foreach (var msg in Model.Messages)
             {
                 <tr>
-                    <td>
+                    <td class="main-msg">
                         <a class="cf-heading" asp-action="GetReplies" asp-controller="Message" asp-route-id="@msg.MessageId">@msg.Heading</a>
 
                     <td>@msg.Username</td>

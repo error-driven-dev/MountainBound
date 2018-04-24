@@ -9,14 +9,14 @@
 
 <p><button class="back float-right mt-2 mb-3"><a href="javascript:history.go(-1)">BACK</a></button></p>
 
-<div class=" mt-3 table-responsive">
+<div class=" mt-3 table-responsive scroll">
     <table class="replies-tbl campfire-tbl table table-bordered table-md">
         <thead>
         <tr ><th>@Model.Message.Heading</th><th>Author</th><th>Date</th></tr>
         </thead>
 
         <tr class="main-post">
-            <td>
+            <td class="main-msg">
             <p>@Model.Message.Text</p>
 
             <td>@Model.Message.Username</td>
@@ -40,7 +40,7 @@
 
    
 </div>
-<div class="reply-box w-50 mt-5 p-2">
+<div class="reply-box mt-5 p-2">
     <h4>Post a Reply</h4>
 
     <div class="row">

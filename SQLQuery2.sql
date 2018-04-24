@@ -1,1 +1,3 @@
-﻿delete from NationalParks where NationalParks.Lat='unknown';
+﻿INSERT INTO Topics(Heading,Description,CreatedAt,UpdatedAt) VALUES ('Items Wanted / For Sale or Trade','Add your wishlist or clean your out the garage.', GETDATE(), GETDATE()),
+('Trail Dicussions','Post reviews, ask questions, or just discuss...', GETDATE(), GETDATE()), ('Group Trips / Meetups','Looking for hiking companions? Post your dates and location here.', GETDATE(), GETDATE()), ('Trip Journal','Tell all about your recent hike', GETDATE(), GETDATE()), ('Miscellaneous Topics','Discuss other topics or non-hiking stuff.', GETDATE(), GETDATE()) ;
+select * from Topics;

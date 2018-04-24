@@ -38,6 +38,7 @@ input.btn:not(.reply) {
 
 .card-body{ padding-left: 0;
     padding-right: 0;
+
 }
 
 .np-cols {
@@ -61,8 +62,10 @@ button.th {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 6%;
+    align-items: flex-start;
+    align-content:flex-start
     
 }
 a#parkname, a.th {
@@ -71,12 +74,13 @@ a#parkname, a.th {
     font-weight:bold
 }
 
-.trails-item{ flex-basis: 23%;
+.trails-item{ 
+    flex-basis: 20%;
     border: 1px black solid;
     margin: 1%;
     
 }
-.trails-img { min-width: 250px; height: auto;}
+.trails-img { min-width: 250px; height: 210px; background-image: url("/images/imageNA.jpg")}
 .trails-title{ font-size: 1em; margin-bottom: 0}
 .trails-subtitle{ font-size: .9em; font-weight: bold}
 .trails-text{ font-size: .8em; margin-top: 0; margin-bottom: 0;}
@@ -173,6 +177,7 @@ a.pagelinks, pages{ color: black; margin-right:1%
     color: #fff6d5;
 }
 
+.reply-box{width:50%}
 
 .main-post {
     background-color: #f2f2f2;
@@ -189,3 +194,13 @@ a.pagelinks, pages{ color: black; margin-right:1%
 }
 .cf-heading:hover {color:#494747}
 p.topic-desc {margin-bottom:0}
+
+@media screen and (max-width: 600px) {
+    .content{ width: 80%; margin-bottom: 15%}
+  
+    .trails-item{ margin: 1% auto 15% auto;}
+    .show-trail{ margin-bottom: 25%}
+    .scroll{ overflow-x: auto;}
+    .main-msg{ min-width:270px}
+    .reply-box{ width: 100%}
+}

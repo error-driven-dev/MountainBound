@@ -9,60 +9,55 @@ body {
 
 .master-nav {
  
-   
-   
-    padding: 0;
+/*    padding: 0;*/
     width: 100%;
     background-color: #2b2a1d !important;
-    height: 4em;
+    min-height: 4rem;
     text-align: center;
-    color: #fff6d5;
-    display: inline-block;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    vertical-align: center;
+/*    color: #fff6d5;*/
+/*    display: inline-block;*/
+/*    font-size: 1em;*/
+   
+
+    overflow: hidden;
+/*    justify-items: center;*/
 
     }
-ul{padding:0}
+/*ul{padding:0}*/
 
-li.page-link {
+div.master-nav>a {
     width: 19%;
-    height: 100%;
-    list-style-type: none;
+   height: 100%;
     display: inline-block;
-    background-color: #2b2a1d;
-    border: none;
-    margin-top:.5em;
-    text-align: center;
-    vertical-align: middle;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 
+    text-align: center;
+/*    vertical-align: middle;*/
+    color: #fff6d5;
+
+/*    margin: auto 0 0 auto;*/
 }
 
-    li.page-link:hover {
-        background-color: #2b2a1d;
-        
-    }
-    li.page-link > a:hover {
+/*.master-nav .icom { display: none;}*/
+
+    div.master-nav > a:hover:not(.icon) {
         color: #ce6000;
         text-decoration-line: none;
     }
 
 
-    li.page-link > a {
-        color: #fff6d5;
-        display: inline-block;
-        margin: auto 0 0 auto;
-    }
-        li.page-link > a.alive {
+        div.master-nav > a.alive {
             color: #ce6000;
         }
-        li.page-link > a > p {
+        div.master-nav> a > p {
             font-size: .8em;
             text-transform: none;
             font-style: oblique;
-            color: #d6ccad;
+/*            color: #d6ccad;*/
             margin-bottom: 0;
-            letter-spacing: 0;
+/*            letter-spacing: 0;*/
         }
 .master-footer {
     height: 6em;
@@ -87,8 +82,6 @@ span.fa, span>a.fa{margin-left:1%}
     width: 12%;
     position: absolute;
     top: 0;
-
-
     right: 44%;
     left: 44%;
     z-index: 10;
@@ -97,7 +90,7 @@ span.fa, span>a.fa{margin-left:1%}
 a.fa-envelope{color:#d6ccad}
 ul.contact-links > li > a, ul.contact-links > li {
     font-size: 1.8vh;
-
+    margin-right:1%;
     display: inline;
     text-align: center;
     color: #d6ccad !important
@@ -105,3 +98,46 @@ ul.contact-links > li > a, ul.contact-links > li {
 }
 ul.contact-links, .sig-line{ margin: 0;}
 .sig-line{letter-spacing: .2vw}
+
+@media screen and (max-width: 1000px) {
+
+    .mb-logo {
+        width: 20%;
+        position: absolute;
+        top: 0;
+        right: 40%;
+        left: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .master-nav a:not(:last-child) {display: none;}
+    .master-nav a.icon {
+        float: left;
+        display: block;
+    }
+        .mb-logo { width: 40%; position: absolute;
+            top: 0;
+            right: 30%;
+            left: 30%;}
+    }
+@media screen and (max-width: 600px) {
+    .master-nav.responsive {position: relative;}
+    .master-nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .master-nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        font-size: .8rem;
+        overflow: visible;
+        margin-bottom: 1.5%;
+        padding-left: 1%
+    }
+    .master-nav.responsive a p { display: none;}
+}
+
+.master-nav .icon{ display: none; font-size: 2rem;}

@@ -2,29 +2,31 @@
 @{
     ViewData["Title"] = "Trail";
 }
- <div class="inline-button"><h2>@Model.Name</h2> <div class="float-right"><button class="th back"><a href="javascript:history.go(-1)">BACK</a></button></div></div>
-<h4 class="heading-text">@Model.Location</h4>
-<p>
-    @if (Model.Stars == 0)
-    {<span>(No reviews yet!)</span>}
-    else
-    {
-        for (int i = 0; i < Math.Round((decimal)Model.Stars); i++)
+<div class="show-trail">
+    <div class="inline-button"><h2>@Model.Name</h2> <div class="float-right"><button class="th back"><a href="javascript:history.go(-1)">BACK</a></button></div></div>
+    <h4 class="heading-text">@Model.Location</h4>
+    <p>
+        @if (Model.Stars == 0)
+        {<span>(No reviews yet!)</span>}
+        else
         {
-            <span>&#x2b50</span>
-        }
-    } (@Model.Stars out of 5 stars)
-</p>
+            for (int i = 0; i < Math.Round((decimal)Model.Stars); i++)
+            {
+                <span>&#x2b50</span>
+            }
+        } (@Model.Stars out of 5 stars)
+    </p>
 
-<p><b>Description:</b> @Model.Summary</p>
-<p><b>Length:</b> @Model.Length</p>
-<p><b>Starting Elevation:</b> @Model.Low</p>
-<p><b>Elevation Gain: </b>@Model.Ascent</p>
-<p><b>Difficulty:</b> @Model.Difficulty</p>
-@*<p><b>Trail Conditions Last Reported on @Model.ConditionDate.ToShortDateString():</b> @Model.ConditionStatus; @Model.ConditionDetails</p>*@
+    <p><b>Description:</b> @Model.Summary</p>
+    <p><b>Length:</b> @Model.Length</p>
+    <p><b>Starting Elevation:</b> @Model.Low</p>
+    <p><b>Elevation Gain: </b>@Model.Ascent</p>
+    <p><b>Difficulty:</b> @Model.Difficulty</p>
+    @*<p><b>Trail Conditions Last Reported on @Model.ConditionDate.ToShortDateString():</b> @Model.ConditionStatus; @Model.ConditionDetails</p>*@
 
 
-<img src="@Model.ImgSmallMed" />
+    <img src="@Model.ImgSmallMed" />
+</div>
 
 
 
