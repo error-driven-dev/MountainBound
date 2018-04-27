@@ -1,7 +1,7 @@
 ﻿   <div class="master-nav">
 
 
-    <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Trailhead" ? "alive":"dead")" asp-action="NationalParks" asp-area="Trailhead" asp-controller="Directory">Trailhead<p>Trail Directory</p></a>
+    <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Trailhead" ? "alive":"dead")" asp-action="NationalParks" asp-area="Trailhead" asp-controller="Trail">Trailhead<p>Trail Directory</p></a>
 
 
     <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "TradingPost" ? "alive":"dead")" asp-action="ProductDirectory" asp-area="TradingPost" asp-controller="Product">Trading Post<p>Gear Store</p></a>

@@ -8,8 +8,9 @@
 <div class="">
     <h2 >Welcome to Trailhead!</h2>
     <h4 >Featuring top hiking trails from the National Parks of the United States</h4>
-
-    <p class="heading-text">Select a National Park from the list below to see trails within a 200 mile radius of the park, listed by state</p>
+    <div >To use your location information to find trails near you <button id="geo">click here.</button> 
+        <p id="no-location"></p></div>
+    <p class="heading-text">Otherwise select a National Park from the list below to see trails within a 200 mile radius of the park, listed by state</p>
     <div class="np-cols">
         @foreach (var park in Model)
         {
@@ -21,3 +22,7 @@
         }
     </div>
 </div>
+<script src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="~/Scripts/geolocation.js"></script>

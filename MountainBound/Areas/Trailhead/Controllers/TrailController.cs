@@ -15,29 +15,19 @@ namespace MountainBound.Areas.Trailhead.Controllers
     public class TrailController : Controller
     {
         private ITrailRepository _repository;
+        private INationalParkApiRepository _nationalParkRepository;
 
-        public TrailController(ITrailRepository repository)
+        public TrailController(ITrailRepository repository, INationalParkApiRepository natpark)
         {
             _repository = repository;
+            _nationalParkRepository = natpark;
+        }
+        public IActionResult NationalParks()
+        {
+
+            return View(_nationalParkRepository.NationalParks.OrderBy(x => x.State));
         }
 
-        // GET: /<controller>/
-//        public async Task<IActionResult> Index2()
-//        {
-//            using (HttpClient client = new HttpClient())
-//            {
-//                client.BaseAddress = new Uri("https://trailapi-trailapi.p.mashape.com");
-//                client.DefaultRequestHeaders.Add("X-Mashape-Key", "K5jOkwvtBvmsh8TXTabBt7U9GG8Vp1PPeynjsnLhM43mHshsc7");
-//                var response =
-//                    await client.GetAsync(
-//                        $"/?limit=25&q[activities_activity_type_name_eq]=hiking&q[state_cont]=washington&radius=25");
-//                response.EnsureSuccessStatusCode();
-//                var stringresult = await response.Content.ReadAsStringAsync();
-//                var data = JsonConvert.DeserializeObject<Jtrail>(stringresult);
-//
-//                return View(data);
-//            }
-//        }
 
         //takes lat and lon from national park DB table
         public async Task<IActionResult> Trails(string lon, string lat, string name)
@@ -47,7 +37,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
                 client.BaseAddress = new Uri("https://www.hikingproject.com");
                 var response =
                     await client.GetAsync(
-                        $"/data/get-trails?lat={lat}&lon={lon}&maxDistance=200&sort=distance&MaxResults=100&key=200238177-24a146be40fa02014108db565b54b2ed");
+                        $"/data/get-trails?lat={lat}&lon={lon}&maxDistance=200&sort=distance&maxResults=100&key=200238177-24a146be40fa02014108db565b54b2ed");
                 response.EnsureSuccessStatusCode();
                 var stringresult = await response.Content.ReadAsStringAsync();
                 JObject result = JObject.Parse(stringresult);
@@ -109,6 +99,11 @@ namespace MountainBound.Areas.Trailhead.Controllers
                 return View("ApiError");
             }
 
+        }
+
+        public IActionResult Geo()
+        {
+            return View();
         }
     }
 }
