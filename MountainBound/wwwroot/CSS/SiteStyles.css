@@ -111,6 +111,7 @@ a#parkname, a.th {
     margin-top: 40px
 }
 
+@media
 .categories {
     margin-top: 75px
 }
@@ -137,7 +138,7 @@ address{ margin: 0; padding: 0; text-transform: uppercase}
 .btn-primary, .btn-block:hover, .tp-btn {
     background-color: #4f879b !important;
     color: white;
-    border: 3px;
+    border: #3a7284 solid 2px;
     border-radius: 0;
 }
 
@@ -203,4 +204,5 @@ p.topic-desc {margin-bottom:0}
     .scroll{ overflow-x: auto;}
     .main-msg{ min-width:270px}
     .reply-box{ width: 100%}
+    p>a.tp-nav{ display: inline-block;}
 }
