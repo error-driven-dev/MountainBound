@@ -22,11 +22,15 @@
     <p><b>Starting Elevation:</b> @Model.Low</p>
     <p><b>Elevation Gain: </b>@Model.Ascent</p>
     <p><b>Difficulty:</b> @Model.Difficulty</p>
-    @*<p><b>Trail Conditions Last Reported on @Model.ConditionDate.ToShortDateString():</b> @Model.ConditionStatus; @Model.ConditionDetails</p>*@
+    <p><b>Latitude:</b><span id="lat"> @Model.Latitude</span></p>
+    <p><b>Longitude:</b> <span id="long">@Model.Longitude</span></p>
 
 
-    <img class="th-img col-sm-12" src="@Model.ImgSmallMed" />
+   
+<img class="th-img col-sm-12 col-lg-6" src="@Model.ImgSmallMed" />
 </div>
+
+
 
 
 

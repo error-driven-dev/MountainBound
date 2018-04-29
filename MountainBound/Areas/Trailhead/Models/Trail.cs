@@ -14,8 +14,8 @@ namespace MountainBound.Areas.Trailhead.Models
         public decimal? Length { get; set; }
         public int Low { get; set; }
         public int Ascent { get; set; }
-        public long Longitude { get; set; }
-        public long Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
         public string Difficulty { get; set; }
         public string ImgSqSmall { get; set; }
         public decimal? Stars { get; set; }
