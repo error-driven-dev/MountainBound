@@ -50,7 +50,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
                     trails.Add(singleTrail);
                 }
 
-                //save to memory repository
+                //save to in-memory repository
                 _repository.AddTrails(trails);
                 ViewBag.NationalPark = name;
                 return View(trails);

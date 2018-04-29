@@ -16,10 +16,11 @@ div.c-wrap{
 
 .carousel-inner > .carousel-item > img,
 .carousel-inner > .carousel-item > a > img {
-    width: 75%; /* use this, or not */
-
-    margin: 0 auto 5% auto;
+    max-width: 75%; /* use this, or not */
+    max-height: 85vh;
+    margin: -1% auto 5% auto;
      z-index: -1;
+
     }
 
 .carousel-item img {

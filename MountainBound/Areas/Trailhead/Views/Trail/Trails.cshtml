@@ -34,7 +34,30 @@ else
                 </small>
                 <h6 class="trails-title"><a class="th"asp-action="ShowTrail" asp-controller="trail" asp-route-id="@a.Id">@a.Name </a></h6>
                 <h7 class="trails-subtitle">@a.Location </h7>
-                <p class="trails-text">Difficulty: @a.Difficulty</p>
+                <p class="trails-text">Difficulty: @{
+                                                       switch (a.Difficulty)
+                                                       {
+                                                           case "green":
+                                                               <span>Easy</span>
+                                                               break;
+                                                           case "greenBlue":
+                                                               <span>Easy/Intermediate</span>
+                                                               break;
+                                                           case "blue":
+                                                               <span>Intermediate</span>
+                                                               break;
+                                                           case "blueBlack":
+                                                               <span>Difficult</span>
+                                                               break;
+                                                           case "black":
+                                                               <span>Easy</span>
+                                                               break;
+                                                           case "dblack":
+                                                               <span>Expert Only</span>
+                                                               break;
+                                                       }
+
+                                                   }</p>
                 <p class="trails-text"> Length: @a.Length</p>
 
             </div>

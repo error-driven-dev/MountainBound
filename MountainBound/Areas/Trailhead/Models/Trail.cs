@@ -11,6 +11,7 @@ namespace MountainBound.Areas.Trailhead.Models
         public string Summary { get; set; }
         public string Location { get; set; }
         public string ImgSmallMed { get; set; }
+        public string ImgMedium { get; set; }
         public decimal? Length { get; set; }
         public int Low { get; set; }
         public int Ascent { get; set; }

@@ -21,17 +21,42 @@
     <p><b>Length:</b> @Model.Length</p>
     <p><b>Starting Elevation:</b> @Model.Low</p>
     <p><b>Elevation Gain: </b>@Model.Ascent</p>
-    <p><b>Difficulty:</b> @Model.Difficulty</p>
+    <p><b>Difficulty:</b> @{
+            switch (Model.Difficulty)
+            {
+                case "green":
+                    <span>Easy</span>
+                    break;
+                case "greenBlue":
+                    <span>Easy/Intermediate</span>
+                break;
+                case "blue":
+                    <span>Intermediate</span>
+                break;
+                case "blueBlack":
+                    <span>Difficult</span>
+                break;
+                case "black":
+                    <span>Easy</span>
+                break;
+                case "dblack":
+                    <span>Expert Only</span>
+                    break;
+            }
+
+        }</p>
     <p><b>Latitude:</b><span id="lat"> @Model.Latitude</span></p>
     <p><b>Longitude:</b> <span id="long">@Model.Longitude</span></p>
 
 
-   
-<img class="th-img col-sm-12 col-lg-6" src="@Model.ImgSmallMed" />
+
+
+
+    <div id="map" class="col-sm-12 col-lg-10"></div>
+    <script src="~/Scripts/thMap.js"></script>
+    <div><img class="th-img col-sm-12 col-lg-8" src="@Model.ImgMedium" /></div>
+
 </div>
-
-
-
 
 
 

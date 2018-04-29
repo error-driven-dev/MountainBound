@@ -26,7 +26,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
             _repository = repository;
         }
 
-
+        //call to api for national park data
         public async Task Index()
         {
             using (HttpClient client = new HttpClient())
@@ -41,6 +41,7 @@ namespace MountainBound.Areas.Trailhead.Controllers
                 JObject convert = JObject.Parse(stringresult);
                 List<JToken> results = convert["data"].Children().ToList();
                 List<NationalPark> natParks = new List<NationalPark>();
+                //digging out and breaking up string that holds lat and long data
                 foreach (JToken result in results)
                 {
                     var lat = "";

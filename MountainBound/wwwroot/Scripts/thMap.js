@@ -4,11 +4,17 @@ var strLong = document.getElementById("long").textContent;
 var long = parseFloat(strLong);
 
 function initMap() {
+    var trailhead = { lat: lat, lng: long };
     var mapOptions = {
-        center: { lat: lat, lng: long },
-        zoom: 8
+        center: trailhead,
+        zoom: 17
     };
     var trailmap = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var marker = new google.maps.Marker({
+        position: trailhead,
+        map: trailmap,
+        icon: "/images/hike.svg"
+    });
 }
 
 function loadScript() {

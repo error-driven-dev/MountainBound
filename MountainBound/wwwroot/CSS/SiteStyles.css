@@ -34,8 +34,15 @@ input.btn:not(.reply) {
     color: #fff6d5;
     border: none;
 }
+/* TRAILHEAD */
+#map, .th-img{ height: 40vh; 
+    width: 100%;
+    margin: 5% auto 5% auto;
 
-
+}
+.th-img { width: 100%;
+    margin: 0 17% 10% 17%;
+}
 .card-body{ padding-left: 0;
     padding-right: 0;
 
@@ -80,6 +87,7 @@ a#parkname, a.th {
     margin: 1%;
     
 }
+
 .trails-img { min-width: 250px; height: 210px; background-image: url("/images/imageNA.jpg")}
 .trails-title{ font-size: 1em; margin-bottom: 0}
 .trails-subtitle{ font-size: .9em; font-weight: bold}
@@ -111,7 +119,7 @@ a#parkname, a.th {
     margin-top: 40px
 }
 
-@media
+
 .categories {
     margin-top: 75px
 }
@@ -205,4 +213,5 @@ p.topic-desc {margin-bottom:0}
     .main-msg{ min-width:270px}
     .reply-box{ width: 100%}
     p>a.tp-nav{ display: inline-block;}
+    .th-img{ margin: 0 auto 0 auto;}
 }
