@@ -1,7 +1,7 @@
 ﻿   <div class="master-nav">
+    <a href="javascript:void(0);" class="icon">&#9776;</a>
 
-
-    <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Trailhead" ? "alive":"dead")" asp-action="NationalParks" asp-area="Trailhead" asp-controller="Directory">Trailhead<p>Trail Directory</p></a>
+    <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Trailhead" ? "alive":"dead")" asp-action="NationalParks" asp-area="Trailhead" asp-controller="Trail">Trailhead<p>Trail Directory</p></a>
 
 
     <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "TradingPost" ? "alive":"dead")" asp-action="ProductDirectory" asp-area="TradingPost" asp-controller="Product">Trading Post<p>Gear Store</p></a>
@@ -11,7 +11,7 @@
     <a class="@(ViewContext.RouteData.Values["area"]?.ToString() == "Campfire" ? "alive":"dead")" asp-action="Index" asp-area="Campfire" asp-controller="Message">Campfire<p>Message Board</p></a>
 
     <a asp-action="ComingSoon" asp-controller="User" asp-area="Admin">Admin<p>Coming soon!</p></a>
-    <a href="javascript:void(0);" class="icon">&#9776;</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
-    <a  href="/"><img class="mb-logo" src="~/images/mbLogo.png" /></a>
+    <a href="/"><img class="mb-logo" src="~/images/mbLogo.png" /></a>
 </div>
